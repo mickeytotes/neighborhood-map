@@ -39,30 +39,30 @@ var neighborhoodSpots = [
 
 /* ****** VIEWMODEL ******** */
 
-/*var ViewModel = function() {
+var ViewModel = function() {
 	var self = this;
 
 	this.places = ko.observableArray([]);
 
 	neighborhoodSpots.forEach(function(locationItem) {
 		self.places.push(new listView(locationItem));
-	});*/
+	});
 
-	//this.selectedType = ko.observable();
-	//this.clearFilter = function() {
-		//this.selectedType(null)
-	//}
-//}
+	this.selectedType = ko.observable();
+	this.clearFilter = function() {
+		this.selectedType(null)
+	}
+}
 
-//ko.applyBindings(new ViewModel());
+ko.applyBindings(new ViewModel());
 
 /* ****** VIEW ******** */
 
-/*var listView = function(data) {
+var listView = function(data) {
 	this.title = ko.observable(data.title);
 	this.location = ko.observable(data.location);
 	this.type = ko.observable(data.type);
-}*/
+}
 
 // ******** MAP ******** //
 
