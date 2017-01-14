@@ -1,5 +1,3 @@
-// Make dat map doe!
-
 /* ****** MODEL ******** */
 
 var neighborhoodSpots = [
@@ -39,8 +37,6 @@ var neighborhoodSpots = [
 
 // ****** VIEWMODEL ******** //
 
-/*
-
 var ViewModel = function() {
 	var self = this;
 
@@ -58,19 +54,14 @@ var ViewModel = function() {
 
 ko.applyBindings(new ViewModel());
 
-*/
 
 //****** VIEW ******** //
-
-/*
 
 var listView = function(data) {
 	this.title = ko.observable(data.title);
 	this.location = ko.observable(data.location);
 	this.type = ko.observable(data.type);
 }
-
-*/
 
 // ******** MAP ******** //
 
@@ -115,10 +106,12 @@ var initMap = function() {
 		fillInfoWindow(this, mapInfoWindow);
 	});
 
+	// Change marker color when mouse hovers over marker.
 	marker.addListener("mouseover", function() {
 		this.setIcon(highlightedIcon);
 	});
 
+	// Use default color when not hovering over marker.
 	marker.addListener("mouseout", function() {
 		this.setIcon(defaultIcon);
 	});
