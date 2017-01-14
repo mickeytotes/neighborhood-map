@@ -37,7 +37,9 @@ var neighborhoodSpots = [
 
 
 
-/* ****** VIEWMODEL ******** */
+// ****** VIEWMODEL ******** //
+
+/*
 
 var ViewModel = function() {
 	var self = this;
@@ -56,13 +58,19 @@ var ViewModel = function() {
 
 ko.applyBindings(new ViewModel());
 
-/* ****** VIEW ******** */
+*/
+
+//****** VIEW ******** //
+
+/*
 
 var listView = function(data) {
 	this.title = ko.observable(data.title);
 	this.location = ko.observable(data.location);
 	this.type = ko.observable(data.type);
 }
+
+*/
 
 // ******** MAP ******** //
 
@@ -75,6 +83,8 @@ var initMap = function() {
 		zoom: 14
 	});
 };
+
+
 
 
 /*function TicketsViewModel() {
