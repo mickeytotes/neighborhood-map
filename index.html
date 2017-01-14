@@ -36,7 +36,8 @@
 		<!--<ul id="list" data-bind="foreach: places">
 			<li data-bind="text: title"></li>
 		</ul> -->
-		<script>
+	</div>
+	<script>
 			function TicketsViewModel() {
 				this.tickets = [
 					{name: "Economy", price: 199},
@@ -48,10 +49,9 @@
 				this.chosenTicket(null)
 				}
 			}
-ko.applyBindings(new TicketsViewModel());
+		ko.applyBindings(new TicketsViewModel());
 
 		</script>
-	</div>
 	<script async defer
      src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyDg2jEEUkuIlkc3ghn6UnNCDVEQVpKzJ9c&callback=initMap">
     </script>
