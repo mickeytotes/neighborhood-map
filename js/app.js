@@ -78,7 +78,7 @@ var listView = function(data) {
 var map;
 
 // Create empty arry to push markers into.
-var markers[];
+var markers = [];
 
 var initMap = function() {
 	map = new google.maps.Map(document.getElementById('map'), {
