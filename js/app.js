@@ -90,6 +90,8 @@ var initMap = function() {
 
 	var mapInfoWindow = new google.maps.InfoWindow();
 
+	var defaultIcon = makeMarkerIcon('ff2d00');
+
 	// loop through neighborhoodSpots array to make markers.
 	for (var i = 0; i < neighborhoodSpots.length; i++) {
 		var title = neighborhoodSpots[i].title;
@@ -99,6 +101,7 @@ var initMap = function() {
 			map: map,
 			position: position,
 			title: title,
+			icon: defaultIcon,
 			id: i
 		});
 
@@ -130,6 +133,20 @@ function fillInfoWindow(marker, infowindow) {
 
 	}
 }
+
+		// This function takes in a color, and then creates a new marker
+       // icon of that color. The icon will be 21px wide by 34px high, have an
+      // origin of 0, 0 and be anchored at 10, 34. Again, thank you Google API for the help.
+      function makeMarkerIcon(markerColor) {
+        var markerImage = new google.maps.MarkerImage(
+          'http://chart.googleapis.com/chart?chst=d_map_spin&chld=1.15|0|' + markerColor +
+          '|40|_|%E2%80%A2',
+          new google.maps.Size(21, 34),
+          new google.maps.Point(0, 0),
+          new google.maps.Point(10, 34),
+          new google.maps.Size(21,34));
+        return markerImage;
+      }
 
 };
 
