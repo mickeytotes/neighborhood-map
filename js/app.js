@@ -1,7 +1,7 @@
 // Make dat map doe!
 
 
-function locationViewModel() = {
+function locationViewModel() {
 	this.places = [
 		{
 			title: "Saggio",
