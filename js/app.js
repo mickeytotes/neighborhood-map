@@ -35,18 +35,11 @@ var neighborhoodSpots = [
     	}
 	]
 
-/* ****** VIEW ******** */
-
-var listView = function(data) {
-	this.title = ko.observable(data.title);
-	this.location = ko.observable(data.location);
-	this.type = ko.observable(data.type);
-}
 
 
 /* ****** VIEWMODEL ******** */
 
-var locationViewModel = function() {
+var ViewModel = function() {
 	var self = this;
 
 	this.places = ko.observableArray([]);
@@ -61,14 +54,32 @@ var locationViewModel = function() {
 	//}
 }
 
-ko.applyBindings(new locationViewModel());
+ko.applyBindings(new ViewModel());
 
+/* ****** VIEW ******** */
 
-var map;
+var listView = function(data) {
+	this.title = ko.observable(data.title);
+	this.location = ko.observable(data.location);
+	this.type = ko.observable(data.type);
+}
 
-var initMap = function() {
+var mapView = function() {
+	var map;
+
 	map = new google.maps.Map(document.getElementById('map'), {
 		center: {lat: 40.843436, lng: -73.934794},
 		zoom: 14
 	});
-};
+
+}
+
+
+//var map;
+
+//var initMap = function() {
+//	map = new google.maps.Map(document.getElementById('map'), {
+//		center: {lat: 40.843436, lng: -73.934794},
+//		zoom: 14
+//	});
+//};
