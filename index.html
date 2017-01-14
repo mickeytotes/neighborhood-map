@@ -16,7 +16,14 @@
 	<div id="map"></div>
 	</div>
 	<div id="list-container">
-		<ul id="list">My Places</ul>
+		<select data-bind= "options: places,
+							optionsCaption: 'Filter your search:'
+							optionsText: 'type',
+							value: selectedType">
+		</select>
+		<button data-bind= "enable: selectedType,
+							click: clearFilter">Clear</button>
+		<ul id="list"></ul>
 	</div>
 	<script async defer
      src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyDg2jEEUkuIlkc3ghn6UnNCDVEQVpKzJ9c&callback=initMap">
