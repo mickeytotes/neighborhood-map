@@ -80,8 +80,8 @@ var initMap = function() {
 function TicketsViewModel() {
 	this.tickets = [
 	{name: "Economy", price: 199},
-	{name "Business", price: 449},
-	{name "First Class", price: 11199}
+	{name: "Business", price: 449},
+	{name: "First Class", price: 11199}
 	];
 	this.chosenTicket = ko.observable();
 	this.resetTicket = function() {
