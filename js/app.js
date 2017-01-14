@@ -133,6 +133,7 @@ function fillInfoWindow(marker, infowindow) {
 		// Close infowindow on click
 		infowindow.addListener('closeclick', function() {
 			infowindow.marker(null);
+			marker.setIcon(defaultIcon);
 		});
 
 		infowindow.setContent("<div>" + marker.title + "</div>")
