@@ -110,7 +110,7 @@ var initMap = function() {
 		fillInfoWindow(this, mapInfoWindow);
 	});
 	}
-};
+
 
 function fillInfoWindow(marker, infowindow) {
 	// Check if marker's window is already open.
@@ -124,6 +124,8 @@ function fillInfoWindow(marker, infowindow) {
 		});
 	}
 }
+
+};
 
 
 
