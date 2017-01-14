@@ -64,7 +64,7 @@ var listView = function(data) {
 	this.type = ko.observable(data.type);
 }
 
-var mapView = function() {
+var initMap = function() {
 	var map;
 
 	map = new google.maps.Map(document.getElementById('map'), {
