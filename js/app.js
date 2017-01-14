@@ -77,11 +77,32 @@ var listView = function(data) {
 
 var map;
 
+// Create empty arry to push markers into.
+var markers[];
+
 var initMap = function() {
 	map = new google.maps.Map(document.getElementById('map'), {
 		center: {lat: 40.843436, lng: -73.934794},
 		zoom: 14
 	});
+
+	var infoWindow = new google.maps.InfoWindow();
+
+	// loop through neighborhoodSpots array to make markers.
+	for (var i = 0; i < neighborhoodSpots.length; i++) {
+		var title = neighborhoodSpots[i].title;
+		var position = neighborhoodSpots[i].location;
+
+		var marker = new google.maps.Marker({
+			map: map,
+			position: position,
+			title: title,
+			id: i
+		});
+
+	// Push markers to markers[] array.
+	markers.push(marker);
+	}
 };
 
 
