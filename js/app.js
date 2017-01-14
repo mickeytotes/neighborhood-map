@@ -1,8 +1,8 @@
 // Make dat map doe!
 
+/* ****** MODEL ******** */
 
-function locationViewModel() {
-	this.places = [
+var neighborhoodSpots = [
 		{
 			title: "Saggio",
 			location: {lat: 40.851473, lng: -73.939588},
@@ -33,11 +33,32 @@ function locationViewModel() {
     		location: {lat: 40.842125, lng: -73.939272},
     		type: "Liquor Store"
     	}
-	];
-	this.selectedType = ko.observable();
-	this.clearFilter = function() {
-		this.selectedType(null)
-	}
+	]
+
+/* ****** VIEW ******** */
+
+var listView = function(data) {
+	this.title = ko.observable(data.title);
+	this.location = ko.observable(data.location);
+	this.type = ko.observable(data.type);
+}
+
+
+/* ****** VIEWMODEL ******** */
+
+var locationViewModel = function() {
+	var self = this;
+
+	this.places = ko.observableArray([]);
+
+	neighborhoodSpots.forEach(function(locationItem) {
+		self.places.push(new listView(locationItem));
+	})
+
+	//this.selectedType = ko.observable();
+	//this.clearFilter = function() {
+		//this.selectedType(null)
+	//}
 }
 
 ko.applyBindings(new locationViewModel());

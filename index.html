@@ -16,18 +16,20 @@
 	<div id="map"></div>
 	</div>
 	<div id="list-container">
-		<select data-bind= "options: places,
+		<!-- <select data-bind= "options: places,
 							optionsCaption: 'Filter your search:'
 							optionsText: 'type',
 							value: selectedType">
 		</select>
 		<button data-bind= "enable: selectedType,
-							click: clearFilter">Clear</button>
-		<ul id="list"></ul>
+							click: clearFilter">Clear</button> -->
+		<ul id="list" data-bind="foreach: places">
+			<li data-bind="text: title"></li>
+		</ul>
 	</div>
 	<script async defer
      src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyDg2jEEUkuIlkc3ghn6UnNCDVEQVpKzJ9c&callback=initMap">
     </script>
-    <script async type='text/javascript' src='js/knockout-3.4.1.js'></script>
+    <script src='js/knockout-3.4.1.js'></script>
 </body>
 </html>
