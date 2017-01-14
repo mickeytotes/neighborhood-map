@@ -111,12 +111,16 @@ var initMap = function() {
 	markers.push(marker);
 
 	//Open info window on click.
-	marker.addListener('click', function() {
+	marker.addListener("click", function() {
 		fillInfoWindow(this, mapInfoWindow);
 	});
 
-	marker.addListener('click', function() {
+	marker.addListener("mouseover", function() {
 		this.setIcon(highlightedIcon);
+	});
+
+	marker.addListener("mouseout", function() {
+		this.setIcon(defaultIcon);
 	});
 	}
 
@@ -133,7 +137,6 @@ function fillInfoWindow(marker, infowindow) {
 		// Close infowindow on click
 		infowindow.addListener('closeclick', function() {
 			infowindow.marker(null);
-			marker.setIcon(defaultIcon);
 		});
 
 		infowindow.setContent("<div>" + marker.title + "</div>")
