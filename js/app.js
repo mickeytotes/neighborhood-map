@@ -58,11 +58,11 @@ var neighborhoodSpots = [
 
 /* ****** VIEW ******** */
 
-var listView = function(data) {
+/*var listView = function(data) {
 	this.title = ko.observable(data.title);
 	this.location = ko.observable(data.location);
 	this.type = ko.observable(data.type);
-}
+}*/
 
 // ******** MAP ******** //
 
@@ -77,7 +77,7 @@ var initMap = function() {
 };
 
 
-function TicketsViewModel() {
+/*function TicketsViewModel() {
 	this.tickets = [
 	{name: "Economy", price: 199},
 	{name: "Business", price: 449},
@@ -88,4 +88,4 @@ function TicketsViewModel() {
 		this.chosenTicket(null)
 	}
 }
-ko.applyBindings(new TicketsViewModel());
+ko.applyBindings(new TicketsViewModel());*/
