@@ -39,22 +39,22 @@ var neighborhoodSpots = [
 
 /* ****** VIEWMODEL ******** */
 
-var ViewModel = function() {
+/*var ViewModel = function() {
 	var self = this;
 
 	this.places = ko.observableArray([]);
 
 	neighborhoodSpots.forEach(function(locationItem) {
 		self.places.push(new listView(locationItem));
-	});
+	});*/
 
 	//this.selectedType = ko.observable();
 	//this.clearFilter = function() {
 		//this.selectedType(null)
 	//}
-}
+//}
 
-ko.applyBindings(new ViewModel());
+//ko.applyBindings(new ViewModel());
 
 /* ****** VIEW ******** */
 
@@ -75,3 +75,17 @@ var initMap = function() {
 		zoom: 14
 	});
 };
+
+
+function TicketsViewModel() {
+	this.tickets = [
+	{name: "Economy", price: 199},
+	{name "Business", price: 449},
+	{name "First Class", price: 11199}
+	];
+	this.chosenTicket = ko.observable();
+	this.resetTicket = function() {
+		this.chosenTicket(null)
+	}
+}
+ko.applyBindings(new TicketsViewModel());

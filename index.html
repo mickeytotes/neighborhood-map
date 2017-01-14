@@ -17,6 +17,15 @@
 	<div id="map"></div>
 	</div>
 	<div id="list-container">
+		<select data-bind= "options: tickets,
+							optionsCaption: 'Choose one:'
+							optionsText: 'name',
+							value: chosenTicket"></select>
+
+		<button data-bind= "enable: chosenTicket,
+							click: resetTicket">Clear</button>
+
+
 		<!-- <select data-bind= "options: places,
 							optionsCaption: 'Filter your search:'
 							optionsText: 'type',
@@ -24,9 +33,9 @@
 		</select>
 		<button data-bind= "enable: selectedType,
 							click: clearFilter">Clear</button> -->
-		<ul id="list" data-bind="foreach: places">
+		<!--<ul id="list" data-bind="foreach: places">
 			<li data-bind="text: title"></li>
-		</ul>
+		</ul> -->
 	</div>
 	<script async defer
      src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyDg2jEEUkuIlkc3ghn6UnNCDVEQVpKzJ9c&callback=initMap">
