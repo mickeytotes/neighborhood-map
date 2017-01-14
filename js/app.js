@@ -53,7 +53,7 @@ var locationViewModel = function() {
 
 	neighborhoodSpots.forEach(function(locationItem) {
 		self.places.push(new listView(locationItem));
-	})
+	});
 
 	//this.selectedType = ko.observable();
 	//this.clearFilter = function() {
