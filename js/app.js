@@ -64,22 +64,14 @@ var listView = function(data) {
 	this.type = ko.observable(data.type);
 }
 
-var initMap = function() {
-	var map;
+// ******** MAP ******** //
 
+
+var map;
+
+var initMap = function() {
 	map = new google.maps.Map(document.getElementById('map'), {
 		center: {lat: 40.843436, lng: -73.934794},
 		zoom: 14
 	});
-
-}
-
-
-//var map;
-
-//var initMap = function() {
-//	map = new google.maps.Map(document.getElementById('map'), {
-//		center: {lat: 40.843436, lng: -73.934794},
-//		zoom: 14
-//	});
-//};
+};
