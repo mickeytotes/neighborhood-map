@@ -118,12 +118,16 @@ function fillInfoWindow(marker, infowindow) {
 		// Clear infowindow
 		infowindow.setContent('');
 		infowindow.marker = marker;
+		// Open  infowinow
+		infowindow.open(map, marker)
+
 		// Close infowindow on click
 		infowindow.addListener('closeclick', function() {
 			infowindow.marker(null);
 		});
+
 		infowindow.setContent("<div>" + marker.title + "</div>")
-		infowindow.open(map, marker)
+
 	}
 }
 
