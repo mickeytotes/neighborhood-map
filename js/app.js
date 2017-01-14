@@ -80,13 +80,15 @@ var map;
 // Create empty arry to push markers into.
 var markers = [];
 
+// Get that map going in the map div!
+// Thanks to Google Maps API for the super helpful documentation, course, and instructions!
 var initMap = function() {
 	map = new google.maps.Map(document.getElementById('map'), {
 		center: {lat: 40.843436, lng: -73.934794},
 		zoom: 14
 	});
 
-	var infoWindow = new google.maps.InfoWindow();
+	var mapInfoWindow = new google.maps.InfoWindow();
 
 	// loop through neighborhoodSpots array to make markers.
 	for (var i = 0; i < neighborhoodSpots.length; i++) {
@@ -102,8 +104,26 @@ var initMap = function() {
 
 	// Push markers to markers[] array.
 	markers.push(marker);
+
+	//Open info window on click.
+	marker.addListener('click', function() {
+		fillInfoWindow(this, mapInfoWindow);
+	});
 	}
 };
+
+function fillInfoWindow(marker, infowindow) {
+	// Check if marker's window is already open.
+	if (infowindow.marker != marker) {
+		// Clear infowindow
+		infowindow.setContent('');
+		infowindow.marker = marker;
+		// Close infowindow on click
+		infowindow.addListener('closeclick', function() {
+			infowindow.marker(null);
+		});
+	}
+}
 
 
 
