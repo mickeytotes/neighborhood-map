@@ -92,6 +92,8 @@ var initMap = function() {
 
 	var defaultIcon = makeMarkerIcon('ff2d00');
 
+	var highlightedIcon = makeMarkerIcon('631504');
+
 	// loop through neighborhoodSpots array to make markers.
 	for (var i = 0; i < neighborhoodSpots.length; i++) {
 		var title = neighborhoodSpots[i].title;
@@ -111,6 +113,10 @@ var initMap = function() {
 	//Open info window on click.
 	marker.addListener('click', function() {
 		fillInfoWindow(this, mapInfoWindow);
+	});
+
+	marker.addListener('click', function() {
+		this.setIcon(highlightedIcon);
 	});
 	}
 
