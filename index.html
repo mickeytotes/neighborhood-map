@@ -6,8 +6,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Neighborhood Map</title>
 	<link rel="stylesheet" href="css/style.css">
-	<script type="text/javascript" src="js/app.js"></script>
-	<script src="lib/knockout-3.4.1.js"></script>
 </head>
 <body>
 	<div class="header">
@@ -17,41 +15,28 @@
 	<div id="map"></div>
 	</div>
 	<div id="list-container">
-		<select data-bind= "options: tickets,
+<!--		<select data-bind= "options: tickets,
 							optionsCaption: 'Choose one:'
 							optionsText: 'name',
 							value: chosenTicket"></select>
 
 		<button data-bind= "enable: chosenTicket,
-							click: resetTicket">Clear</button>
+							click: resetTicket">Clear</button> -->
 
 
-		<!-- <select data-bind= "options: places,
+		 <select data-bind= "options: places,
 							optionsCaption: 'Filter your search:'
 							optionsText: 'type',
 							value: selectedType">
 		</select>
 		<button data-bind= "enable: selectedType,
 							click: clearFilter">Clear</button> -->
-		<!--<ul id="list" data-bind="foreach: places">
+		<ul id="list" data-bind="foreach: places">
 			<li data-bind="text: title"></li>
-		</ul> -->
+		</ul>
 	</div>
-	<script>
-			function TicketsViewModel() {
-				this.tickets = [
-					{name: "Economy", price: 199},
-					{name: "Business", price: 449},
-					{name: "First Class", price: 11199}
-				];
-				this.chosenTicket = ko.observable();
-				this.resetTicket = function() {
-				this.chosenTicket(null)
-				}
-			}
-		ko.applyBindings(new TicketsViewModel());
-
-		</script>
+	<script src="lib/knockout-3.4.1.js"></script>
+	<script src="js/app.js"></script>
 	<script async defer
      src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyDg2jEEUkuIlkc3ghn6UnNCDVEQVpKzJ9c&callback=initMap">
     </script>
