@@ -3,34 +3,40 @@
 var neighborhoodSpots = [
 		{
 			title: "Saggio",
+			phone: "212-795-3080",
 			location: {lat: 40.851473, lng: -73.939588},
 			type: "Restaurant",
 //			label: "Restaurant"
 		},
     	{
     		title: "Mambi Steakhouse",
+    		phone: "212-928-9796",
     		location: {lat: 40.84772, lng: -73.938251},
     		type: "Restaurant"
     	},
     	{
     		title: "Planet Fitness",
+    		phone: "646-216-3150",
     		location: {lat: 40.847326, lng: -73.937638},
     		type: "Gym",
     //		label:"Gym"
     	},
     	{
     		title: "Le Cheile",
+    		phone: "212-740-3111",
     		location: {lat: 40.851495, lng: -73.939988},
     		type: "Restaurant"
     	},
     	{
     		title: "Elite Cleaners",
+    		phone: "212-927-5872",
     		location: {lat: 40.843097, lng: -73.939438},
     		type: "Dry Cleaners",
     //		label: "Dry Cleaners"
     	},
     	{
     		title: "Columbia Wine Co",
+    		phone: "212-543-2633",
     		location: {lat: 40.842125, lng: -73.939272},
     		type: "Liquor Store",
     //		label: "Liquor Store"
