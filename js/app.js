@@ -116,8 +116,9 @@ var initMap = function() {
 			id: i
 		});
 
+
 	// Make marker bounce on click.
-	marker.addListener("click", toggleBounce);
+	marker.addListener("click", makeBounce);
 
 	// Push markers to markers[] array.
 	markers.push(marker);
@@ -138,12 +139,14 @@ var initMap = function() {
 	});
 	}
 
-	function toggleBounce() {
-		if (marker.getAnimation() !== null) {
-			marker.setAnimation(null);
-		} else {
+	function makeBounce() {
+		var bounce = setInterval(function() {
 			marker.setAnimation(google.maps.Animation.BOUNCE);
-		}
+		}, 100);
+
+		setTimeout(function() {
+			clearInterval(bounce);
+		}, 1000);
 	}
 
 
