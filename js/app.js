@@ -89,7 +89,7 @@ var initMap = function() {
 	});
 
 	map.addListener("click", function(event) {
-		for(var = i; i < markers.length; i++) {
+		for(var i = 0; i < markers.length; i++) {
 			markers[i].close();
 		}
 	});
