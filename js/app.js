@@ -91,6 +91,7 @@ var initMap = function() {
 	// Close infowindow when any other portion of the map is clicked.
 	google.maps.event.addListener(map, "click", function(event) {
 		mapInfoWindow.close();
+		marker.setIcon(defaultIcon);
 	});
 
 	var mapInfoWindow = new google.maps.InfoWindow();
@@ -98,6 +99,8 @@ var initMap = function() {
 	var defaultIcon = makeMarkerIcon('ff2d00');
 
 	var highlightedIcon = makeMarkerIcon('631504');
+
+	var clickedIcon = makeMarkerIcon('46e91f');
 
 	// loop through neighborhoodSpots array to make markers.
 	for (var i = 0; i < neighborhoodSpots.length; i++) {
@@ -126,6 +129,8 @@ var initMap = function() {
 	//Open info window on click.
 	marker.addListener("click", function() {
 		fillInfoWindow(this, mapInfoWindow);
+		// change clicked icon's color.
+		this.setIcon(clickedIcon);
 	});
 
 	// Change marker color when mouse hovers over marker.
@@ -159,9 +164,11 @@ var initMap = function() {
 			// Open  infowinow
 			infowindow.open(map, marker)
 
-			// Close infowindow on click
+			// Close infowindow on click.
 			infowindow.addListener('closeclick', function() {
 				infowindow.marker(null);
+				// Change icon color back to default.
+				marker.setIcon(defaultIcon);
 			});
 
 			infowindow.setContent("<div>" + marker.title + "</div><div>" + marker.phone + "</div>")
