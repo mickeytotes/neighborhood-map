@@ -4,7 +4,8 @@ var neighborhoodSpots = [
 		{
 			title: "Saggio",
 			location: {lat: 40.851473, lng: -73.939588},
-			type: "Restaurant"
+			type: "Restaurant",
+			label: "Restaurant"
 		},
     	{
     		title: "Mambi Steakhouse",
@@ -14,7 +15,8 @@ var neighborhoodSpots = [
     	{
     		title: "Planet Fitness",
     		location: {lat: 40.847326, lng: -73.937638},
-    		type: "Gym"
+    		type: "Gym",
+    		label:"Gym"
     	},
     	{
     		title: "Le Cheile",
@@ -24,12 +26,14 @@ var neighborhoodSpots = [
     	{
     		title: "Elite Cleaners",
     		location: {lat: 40.843097, lng: -73.939438},
-    		type: "Dry Cleaners"
+    		type: "Dry Cleaners",
+    		label: "Dry Cleaners"
     	},
     	{
     		title: "Columbia Wine Co",
     		location: {lat: 40.842125, lng: -73.939272},
-    		type: "Liquor Store"
+    		type: "Liquor Store",
+    		label: "Liquor Store"
     	}
 	]
 
@@ -151,19 +155,3 @@ function fillInfoWindow(marker, infowindow) {
       }
 
 };
-
-
-
-
-/*function TicketsViewModel() {
-	this.tickets = [
-	{name: "Economy", price: 199},
-	{name: "Business", price: 449},
-	{name: "First Class", price: 11199}
-	];
-	this.chosenTicket = ko.observable();
-	this.resetTicket = function() {
-		this.chosenTicket(null)
-	}
-}
-ko.applyBindings(new TicketsViewModel());*/
