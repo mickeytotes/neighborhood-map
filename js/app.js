@@ -140,12 +140,14 @@ var initMap = function() {
 
 	// Use default color when not hovering over marker.
 	marker.addListener("mouseout", function() {
+		this.setIcon(defaultIcon);
+
 		// Make sure icon hasn't been clicked.
-		if (this.setIcon(clickedIcon) = true) {
-		this.setIcon(clickedIcon);
-		} else {
-			this.setIcon(defaultIcon);
-		}
+		//if (this.setIcon(clickedIcon) = true) {
+		//this.setIcon(clickedIcon);
+		//} else {
+		//	this.setIcon(defaultIcon);
+		//}
 	});
 }
 
