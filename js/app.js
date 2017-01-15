@@ -141,7 +141,7 @@ function fillInfoWindow(marker, infowindow) {
 			infowindow.marker(null);
 		});
 
-		infowindow.setContent("<div>" + marker.title + "</div>")
+		infowindow.setContent("<div>" + marker.title + "</div><div>" + marker.phone + "</div>")
 
 	}
 }
