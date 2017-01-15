@@ -89,7 +89,7 @@ var initMap = function() {
 	});
 
 	google.maps.event.addListener(map, "click", function(event) {
-		infowindow.close();
+		mapInfoWindow.close();
 	});
 
 	var mapInfoWindow = new google.maps.InfoWindow();
