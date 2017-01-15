@@ -88,10 +88,8 @@ var initMap = function() {
 		zoom: 14
 	});
 
-	map.addListener("click", function(event) {
-		for(var i = 0; i < markers.length; i++) {
-			markers[i].close();
-		}
+	google.maps.event.addListener(map, "click", function(event) {
+		infowindow.close();
 	});
 
 	var mapInfoWindow = new google.maps.InfoWindow();
