@@ -145,7 +145,7 @@ var initMap = function() {
 		this.setIcon(defaultIcon);
 		}
 	});
-	}
+//}
 
 /*	function makeBounce() {
 		var bounce = setInterval(function() {
