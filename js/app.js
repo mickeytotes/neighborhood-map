@@ -88,6 +88,12 @@ var initMap = function() {
 		zoom: 14
 	});
 
+	map.addListener("click", function(event) {
+		for(var = i; i < markers.length; i++) {
+			markers[i].close();
+		}
+	});
+
 	var mapInfoWindow = new google.maps.InfoWindow();
 
 	var defaultIcon = makeMarkerIcon('ff2d00');
