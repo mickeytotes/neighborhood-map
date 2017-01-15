@@ -88,6 +88,7 @@ var initMap = function() {
 		zoom: 14
 	});
 
+	// Close infowindow when any other portion of the map is clicked.
 	google.maps.event.addListener(map, "click", function(event) {
 		mapInfoWindow.close();
 	});
