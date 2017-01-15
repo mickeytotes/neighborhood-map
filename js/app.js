@@ -110,6 +110,7 @@ var initMap = function() {
 			position: position,
 			title: title,
 			phone: phone,
+			// markers drop in when page loads.
 			animation: google.maps.Animation.DROP,
 			icon: defaultIcon,
 			id: i
@@ -117,6 +118,9 @@ var initMap = function() {
 
 	// Push markers to markers[] array.
 	markers.push(marker);
+
+	// Make marker bounce on click.
+	marker.addListener("click", toggleBounce);
 
 	//Open info window on click.
 	marker.addListener("click", function() {
@@ -134,29 +138,37 @@ var initMap = function() {
 	});
 	}
 
-
-function fillInfoWindow(marker, infowindow) {
-	// Check if marker's window is already open.
-	if (infowindow.marker != marker) {
-		// Clear infowindow
-		infowindow.setContent('');
-		infowindow.marker = marker;
-		// Open  infowinow
-		infowindow.open(map, marker)
-
-		// Close infowindow on click
-		infowindow.addListener('closeclick', function() {
-			infowindow.marker(null);
-		});
-
-		infowindow.setContent("<div>" + marker.title + "</div><div>" + marker.phone + "</div>")
-
+	function toggleBounce() {
+		if (marker.getAnimation() !== null) {
+			marker.setAnimation(null);
+		} else {
+			marker.setAnimation(google.maps.Animation.BOUNCE);
+		}
 	}
-}
+
+
+	function fillInfoWindow(marker, infowindow) {
+		// Check if marker's window is already open.
+		if (infowindow.marker != marker) {
+			// Clear infowindow
+			infowindow.setContent('');
+			infowindow.marker = marker;
+			// Open  infowinow
+			infowindow.open(map, marker)
+
+			// Close infowindow on click
+			infowindow.addListener('closeclick', function() {
+				infowindow.marker(null);
+			});
+
+			infowindow.setContent("<div>" + marker.title + "</div><div>" + marker.phone + "</div>")
+
+			}
+		}
 
 		// This function takes in a color, and then creates a new marker
-       // icon of that color. The icon will be 21px wide by 34px high, have an
-      // origin of 0, 0 and be anchored at 10, 34. Again, thank you Google API for the help.
+        // icon of that color. The icon will be 21px wide by 34px high, have an
+        // origin of 0, 0 and be anchored at 10, 34. Again, thank you Google API for the help.
       function makeMarkerIcon(markerColor) {
         var markerImage = new google.maps.MarkerImage(
           "https://chart.googleapis.com/chart?chst=d_map_spin&chld=1.15|0|" + markerColor +
