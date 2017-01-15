@@ -14,7 +14,7 @@
 	<div class="container">
 	<div id="map"></div>
 	</div>
-	<div id="list-container">
+	<div id="list-container" data-bind="with: $root">
 <!--		<select data-bind= "options: tickets,
 							optionsCaption: 'Choose one:'
 							optionsText: 'name',
@@ -26,7 +26,7 @@
 
 		 <select data-bind= "options: places,
 							optionsCaption: 'Filter your search:'
-							optionsText: type,
+							optionsText: 'type',
 							value: selectedType">
 		</select>
 		<button data-bind= "enable: selectedType,
