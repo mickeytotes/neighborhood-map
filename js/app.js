@@ -141,11 +141,11 @@ var initMap = function() {
 	// Use default color when not hovering over marker.
 	marker.addListener("mouseout", function() {
 		// Make sure icon hasn't been clicked.
-		if (this.setIcon(clickedIcon) != true {
+		if (this.setIcon(clickedIcon) != true) {
 		this.setIcon(defaultIcon);
 		}
 	});
-//}
+}
 
 /*	function makeBounce() {
 		var bounce = setInterval(function() {
