@@ -33,6 +33,14 @@ var neighborhoodSpots = [
     	}
 	]
 
+	//****** VIEW ******** //
+
+var listView = function(data) {
+	this.title = ko.observable(data.title);
+	this.location = ko.observable(data.location);
+	this.type = ko.observable(data.type);
+}
+
 
 
 // ****** VIEWMODEL ******** //
@@ -53,15 +61,6 @@ var ViewModel = function() {
 }
 
 ko.applyBindings(new ViewModel());
-
-
-//****** VIEW ******** //
-
-var listView = function(data) {
-	this.title = ko.observable(data.title);
-	this.location = ko.observable(data.location);
-	this.type = ko.observable(data.type);
-}
 
 // ******** MAP ******** //
 
