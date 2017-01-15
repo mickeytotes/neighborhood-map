@@ -110,6 +110,7 @@ var initMap = function() {
 			position: position,
 			title: title,
 			phone: phone,
+			animation: google.maps.Animation.DROP,
 			icon: defaultIcon,
 			id: i
 		});
