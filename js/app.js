@@ -116,11 +116,11 @@ var initMap = function() {
 			id: i
 		});
 
-	// Push markers to markers[] array.
-	markers.push(marker);
-
 	// Make marker bounce on click.
 	marker.addListener("click", toggleBounce);
+
+	// Push markers to markers[] array.
+	markers.push(marker);
 
 	//Open info window on click.
 	marker.addListener("click", function() {
