@@ -132,8 +132,10 @@ function getFSInfo() {
 $.ajax({
 	url: foursquareURL,
 	success: function(data) {
-		var venue = data.response.venues[0];
-		var address = data.venue.formattedAddress;
+		var venue = data.response.venue;
+		var address = venue.formattedAddress;
+		var phone = venue.formattedPhone;
+
 		console.log(data);
 	}
 }).fail(function(error) {
