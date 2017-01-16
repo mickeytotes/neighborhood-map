@@ -80,8 +80,6 @@ var ViewModel = function() {
 		self.filters.push(new filterView(filterItem));
 	});
 
-	console.log(this.filters);
-
 
 
 	/*self.filters = ko.observableArray([]);
