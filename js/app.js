@@ -82,9 +82,9 @@ var ViewModel = function() {
 		this.selectedType(null)
 	}
 
-	this.filterPlaces = function() {
-		if ()
-	}
+	//this.filterPlaces = function() {
+	//	if ()
+	//}
 
 
 }
