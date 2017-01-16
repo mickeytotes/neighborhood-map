@@ -192,7 +192,7 @@ var initMap = function() {
 			// markers drop in when page loads.
 			animation: google.maps.Animation.DROP,
 			icon: defaultIcon,
-			id: id;
+			id: id
 		});
 
 
