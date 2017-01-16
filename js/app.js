@@ -5,14 +5,14 @@ var neighborhoodSpots = [
 			title: "Saggio",
 			phone: "212-795-3080",
 			location: {lat: 40.851473, lng: -73.939588},
-			type: "Restaurant",
+			type: "Italian Restaurant",
 //			label: "Restaurant"
 		},
     	{
     		title: "Mambi Steakhouse",
     		phone: "212-928-9796",
     		location: {lat: 40.84772, lng: -73.938251},
-    		type: "Restaurant"
+    		type: "Dominican Restaurant"
     	},
     	{
     		title: "Planet Fitness",
@@ -25,7 +25,7 @@ var neighborhoodSpots = [
     		title: "Le Cheile",
     		phone: "212-740-3111",
     		location: {lat: 40.851495, lng: -73.939988},
-    		type: "Restaurant"
+    		type: "Pub/Restaurant"
     	},
     	{
     		title: "Elite Cleaners",
