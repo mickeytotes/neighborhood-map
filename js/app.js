@@ -1,6 +1,6 @@
 /* ****** MODEL ******** */
 
-var neighborhoodSpots = [
+var neighborhoodSpots = {
 		filters: ["None", "Restaurant", "Gym", "Dry Cleaners"],
 		spots: [
 			{
@@ -42,8 +42,8 @@ var neighborhoodSpots = [
     		location: {lat: 40.842125, lng: -73.939272},
     		type: "Liquor Store",
     //		label: "Liquor Store"
-    	}
-	]
+    	]
+	}
 
 	//****** VIEW ******** //
 
