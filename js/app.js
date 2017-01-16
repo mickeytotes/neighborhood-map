@@ -169,6 +169,7 @@ var initMap = function() {
 		var title = neighborhoodSpots.spots[i].title;
 		var phone = neighborhoodSpots.spots[i].phone;
 		var position = neighborhoodSpots.spots[i].location;
+		var id = neighborhoodSpots.spots[i].foursquareID;
 
 		var marker = new google.maps.Marker({
 			map: map,
@@ -178,7 +179,7 @@ var initMap = function() {
 			// markers drop in when page loads.
 			animation: google.maps.Animation.DROP,
 			icon: defaultIcon,
-			id: i
+			id: id;
 		});
 
 
