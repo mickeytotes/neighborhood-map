@@ -116,7 +116,7 @@ var ViewModel = function() {
 
 ko.applyBindings(new ViewModel());
 
-
+/*
 // ********* foursquare api // ************
 
 var apiURL = "https://api.foursquare.com/v2/venues/";
@@ -125,7 +125,7 @@ var foursquareSecret = "CRZRFZZCTLNTJEOYWDHHKSEMH4DF4G4S0YBBMOIJJ1WYD2TE";
 var foursquareVersion = "20170116";
 //var venueFoursquareID = marker.id;
 
-var foursquareURL = apiURL + venueFoursquareID + "?client_id=" + foursquareClientID +
+//var foursquareURL = apiURL + venueFoursquareID + "?client_id=" + foursquareClientID +
 					"&client_secret=" + foursquareSecret + "&v=" + foursquareVersion;
 
 function getFSInfo(marker, infowindow) {
@@ -146,7 +146,7 @@ $.ajax({
 	alert("Error retrieving data from Foursquare");
 });
 
-}
+}*/
 // ******** MAP ******** //
 
 
