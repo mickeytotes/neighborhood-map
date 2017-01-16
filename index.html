@@ -19,7 +19,8 @@
 		 <select data-bind= "options: places,
 							optionsCaption: 'Filter your search:',
 							optionsText: 'type',
-							value: selectedType">
+							value: selectedType,
+							click: filterPlaces">
 		</select>
 		<button data-bind= "enable: selectedType,
 							click: clearFilter">Clear</button>

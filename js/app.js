@@ -1,18 +1,20 @@
 /* ****** MODEL ******** */
 
 var neighborhoodSpots = [
-		{
-			title: "Saggio",
-			phone: "212-795-3080",
-			location: {lat: 40.851473, lng: -73.939588},
-			type: "Italian Restaurant",
+		filters: ["None", "Restaurant", "Gym", "Dry Cleaners"],
+		spots: [
+			{
+				title: "Saggio",
+				phone: "212-795-3080",
+				location: {lat: 40.851473, lng: -73.939588},
+			type: "Restaurant",
 //			label: "Restaurant"
 		},
     	{
     		title: "Mambi Steakhouse",
     		phone: "212-928-9796",
     		location: {lat: 40.84772, lng: -73.938251},
-    		type: "Dominican Restaurant"
+    		type: "Restaurant"
     	},
     	{
     		title: "Planet Fitness",
@@ -25,7 +27,7 @@ var neighborhoodSpots = [
     		title: "Le Cheile",
     		phone: "212-740-3111",
     		location: {lat: 40.851495, lng: -73.939988},
-    		type: "Pub/Restaurant"
+    		type: "Restaurant"
     	},
     	{
     		title: "Elite Cleaners",
@@ -51,6 +53,9 @@ var listView = function(data) {
 	this.type = ko.observable(data.type);
 }
 
+var filterView = function(data) {
+	this.filters = ko.observable(data.filters):
+}
 
 
 // ****** VIEWMODEL ******** //
@@ -58,16 +63,29 @@ var listView = function(data) {
 var ViewModel = function() {
 	var self = this;
 
+	this.filters = ko.observableArray([]);
+
 	this.places = ko.observableArray([]);
 
-	neighborhoodSpots.forEach(function(locationItem) {
+	// Push data to observable array.
+	neighborhoodSpots.spots.forEach(function(locationItem) {
 		self.places.push(new listView(locationItem));
+	});
+
+	neighborhoodSpots.filters.forEach(function(filterItem) {
+		self.filters.push(new filterView(filterItem));
 	});
 
 	this.selectedType = ko.observable();
 	this.clearFilter = function() {
 		this.selectedType(null)
 	}
+
+	this.filterPlaces = function() {
+		if ()
+	}
+
+
 }
 
 ko.applyBindings(new ViewModel());
