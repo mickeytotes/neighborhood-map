@@ -52,11 +52,13 @@ var listView = function(data) {
 	this.title = ko.observable(data.title);
 	this.location = ko.observable(data.location);
 	this.type = ko.observable(data.type);
+	//just added this
+	this.filter = ko.observable(data.filters);
 }
 
-var filterView = function(data) {
-	this.filters = ko.observable(data.filters);
-}
+//var filterView = function(data) {
+//	this.filters = ko.observable(data.filters);
+//}
 
 
 // ****** VIEWMODEL ******** //
@@ -88,9 +90,6 @@ var ViewModel = function() {
 		}
 	});
 
-neighborhoodSpots.filters.forEach(function(filterItem) {
-		self.filters.push(new filterView(filterItem));
-	});
 	//neighborhoodSpots.filters.forEach(function(filterItem) {
 	//	self.filters.push(new filterView(filterItem));
 	//});
