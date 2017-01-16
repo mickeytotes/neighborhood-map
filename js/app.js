@@ -7,42 +7,44 @@ var neighborhoodSpots = {
 				title: "Saggio",
 				phone: "212-795-3080",
 				location: {lat: 40.851473, lng: -73.939588},
-			type: "Restaurant",
-//			label: "Restaurant"
-		},
-    	{
-    		title: "Mambi Steakhouse",
-    		phone: "212-928-9796",
-    		location: {lat: 40.84772, lng: -73.938251},
-    		type: "Restaurant"
-    	},
-    	{
-    		title: "Planet Fitness",
-    		phone: "646-216-3150",
-    		location: {lat: 40.847326, lng: -73.937638},
-    		type: "Gym",
-    //		label:"Gym"
-    	},
-    	{
-    		title: "Le Cheile",
-    		phone: "212-740-3111",
-    		location: {lat: 40.851495, lng: -73.939988},
-    		type: "Restaurant"
-    	},
-    	{
-    		title: "Elite Cleaners",
-    		phone: "212-927-5872",
-    		location: {lat: 40.843097, lng: -73.939438},
-    		type: "Dry Cleaners",
-    //		label: "Dry Cleaners"
-    	},
-    	{
-    		title: "Columbia Wine Co",
-    		phone: "212-543-2633",
-    		location: {lat: 40.842125, lng: -73.939272},
-    		type: "Liquor Store",
-    //		label: "Liquor Store"
-		}
+				type: "Restaurant",
+				foursquareID: "4d21107c6e8c37042b58ff9f"
+			},
+    		{
+    			title: "Mambi Steakhouse",
+    			phone: "212-928-9796",
+    			location: {lat: 40.84772, lng: -73.938251},
+    			type: "Restaurant",
+    			foursquareID: "4acce300f964a520e2c920e3"
+    		},
+    		{
+    			title: "Planet Fitness",
+    			phone: "646-216-3150",
+    			location: {lat: 40.847326, lng: -73.937638},
+    			type: "Gym",
+    			foursquareID: "53bbf3be498e18ec3a07c2b0"
+    		},
+    		{
+    			title: "Le Cheile",
+    			phone: "212-740-3111",
+    			location: {lat: 40.851495, lng: -73.939988},
+    			type: "Restaurant",
+    			foursquareID: "4e77e40118387f865961f673"
+    		},
+    		{
+    			title: "Elite Cleaners",
+    			phone: "212-927-5872",
+    			location: {lat: 40.843097, lng: -73.939438},
+    			type: "Dry Cleaners",
+    			foursquareID: "4f31b42ce4b09fde5e534fbb"
+    		},
+    		{
+    			title: "Columbia Wine Co",
+    			phone: "212-543-2633",
+    			location: {lat: 40.842125, lng: -73.939272},
+    			type: "Liquor Store",
+    			foursquareID: "506cc066e4b019e8dad3a401"
+			}
     	]
 	}
 
@@ -113,6 +115,24 @@ var ViewModel = function() {
 }
 
 ko.applyBindings(new ViewModel());
+
+
+// ********* foursquare api // ************
+
+var apiURL = "https://api.foursquare.com/v2/venues/";
+var foursquareClientID = "EZGUVGZGJDXFSHSJY1FTHZBKDYDPZUGDHQRED30OSMY2XJYO";
+var foursquareSecret = "CRZRFZZCTLNTJEOYWDHHKSEMH4DF4G4S0YBBMOIJJ1WYD2TE";
+var foursquareVersion = "20170116";
+
+var foursquareURL = apiURL + venueFoursquareID + "?client_id=" + foursquareClientID +
+					"&client_secret=" + foursquareSecret + "&v=" + foursquareVersion;
+
+$.ajax({
+	url: foursquareURL,
+	success: function(data) {
+		console.log(data);
+	}
+});
 
 // ******** MAP ******** //
 
