@@ -16,7 +16,10 @@
 	<div id="map"></div>
 	</div>
 	<div id="list-container">
-		 <select data-bind= "options: filters, value: filter">
+		 <select data-bind= "options: filters,
+		 					optionsCaption: 'filter your search:',
+		 					optionsText: 'filter',
+		 					value: selectedType">
 		</select>
 		<button data-bind= "enable: selectedType,
 							click: clearFilter">Clear</button>
