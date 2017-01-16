@@ -18,12 +18,12 @@
 	<div id="list-container">
 		 <select data-bind= "options: filters,
 							optionsCaption: 'Filter your search:',
-							optionsText: 'filters',
+							optionsText: 'filter',
 							value: selectedType">
 		</select>
 		<button data-bind= "enable: selectedType,
 							click: clearFilter">Clear</button>
-		<ul id="list" data-bind="foreach: places">
+		<ul id="list" data-bind="foreach: filteredSpots">
 			<li data-bind="text: title"></li>
 		</ul>
 	</div>

@@ -61,21 +61,35 @@ var filterView = function(data) {
 
 // ****** VIEWMODEL ******** //
 
-var ViewModel = function() {
+var ViewModel = function(data) {
 	var self = this;
 
-	this.filters = ko.observableArray([]);
 
 	this.places = ko.observableArray([]);
 
 	// Push data to observable array.
-	neighborhoodSpots.spots.forEach(function(locationItem) {
-		self.places.push(new listView(locationItem));
+	//neighborhoodSpots.spots.forEach(function(locationItem) {
+	//	self.places.push(new listView(locationItem));
+	//});
+
+	self.filters = ko.observableArray([]);
+	self.filter = ko.observable('');
+	self.spots = ko.observableArray(data.spots);
+	self.filteredSpots = ko.computed(function() {
+		var filter = self.filter();
+		if (!filter || filter == "None") {
+			return self.places();
+		} else {
+			return ko.utils.arrayFilter(self.spots(), function(i) {
+				return i.type == filter;
+			});
+		}
 	});
 
-	neighborhoodSpots.filters.forEach(function(filterItem) {
-		self.filters.push(new filterView(filterItem));
-	});
+
+	//neighborhoodSpots.filters.forEach(function(filterItem) {
+	//	self.filters.push(new filterView(filterItem));
+	//});
 
 	this.selectedType = ko.observable();
 	this.clearFilter = function() {
