@@ -128,13 +128,17 @@ var venueFoursquareID = marker.id;
 var foursquareURL = apiURL + venueFoursquareID + "?client_id=" + foursquareClientID +
 					"&client_secret=" + foursquareSecret + "&v=" + foursquareVersion;
 
-function getFSInfo() {
+function getFSInfo(marker, infowindow) {
 $.ajax({
 	url: foursquareURL,
 	success: function(data) {
 		var venue = data.response.venue;
 		var address = venue.formattedAddress;
 		var phone = venue.formattedPhone;
+
+		infowindow.setContent("<div>" + marker.title + "</div><div>" + phone +
+			"</div><div>" + address + "</div>");
+
 
 		console.log(data);
 	}
