@@ -132,6 +132,9 @@ $.ajax({
 	success: function(data) {
 		console.log(data);
 	}
+	error: function(status) {
+		alert("Error making ajax request to foursquare:", status);
+	}
 });
 
 // ******** MAP ******** //
