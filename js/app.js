@@ -53,12 +53,12 @@ var listView = function(data) {
 	this.location = ko.observable(data.location);
 	this.type = ko.observable(data.type);
 	//just added this
-	this.filter = ko.observable(data.filters);
+	//this.filter = ko.observable(data.filters);
 }
 
-//var filterView = function(data) {
-//	this.filters = ko.observable(data.filters);
-//}
+var filterView = function(data) {
+	this.filter = ko.observable(data.filters);
+}
 
 
 // ****** VIEWMODEL ******** //
@@ -74,9 +74,15 @@ var ViewModel = function() {
 		self.places.push(new listView(locationItem));
 	});
 
+	this.filters = ko.observableArray([]);
+
+	neighborhoodSpots.filters.forEach(function(filterItem) {
+		self.filters.push(new filterView(filterItem));
+	});
 
 
-	self.filters = ko.observableArray([]);
+
+	/*self.filters = ko.observableArray([]);
 	self.filter = ko.observable('');
 	self.places = ko.observableArray(neighborhoodSpots.spots);
 	self.filteredSpots = ko.computed(function() {
@@ -88,7 +94,7 @@ var ViewModel = function() {
 				return i.type == filter;
 			});
 		}
-	});
+	});*/
 
 	//neighborhoodSpots.filters.forEach(function(filterItem) {
 	//	self.filters.push(new filterView(filterItem));
