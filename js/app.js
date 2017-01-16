@@ -68,13 +68,13 @@ var ViewModel = function() {
 	this.places = ko.observableArray([]);
 
 	// Push data to observable array.
-	//neighborhoodSpots.spots.forEach(function(locationItem) {
-	//	self.places.push(new listView(locationItem));
-	//});
+	neighborhoodSpots.spots.forEach(function(locationItem) {
+		self.places.push(new listView(locationItem));
+	});
 
 	self.filters = ko.observableArray([]);
 	self.filter = ko.observable('');
-	self.spots = ko.observableArray(neighborhoodSpots.spots);
+	self.places = ko.observableArray(neighborhoodSpots.spots);
 	self.filteredSpots = ko.computed(function() {
 		var filter = self.filter();
 		if (!filter || filter == "None") {
