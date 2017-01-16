@@ -55,7 +55,7 @@ var listView = function(data) {
 }
 
 var filterView = function(data) {
-	this.filters = ko.observable(data.filters):
+	this.filters = ko.observable(data.filters);
 }
 
 
