@@ -80,7 +80,7 @@ var ViewModel = function() {
 		self.filters.push(new filterView(filterItem));
 	});
 
-	console.log(filters);
+	console.log(this.filters);
 
 
 
