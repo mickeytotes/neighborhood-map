@@ -123,20 +123,24 @@ var apiURL = "https://api.foursquare.com/v2/venues/";
 var foursquareClientID = "EZGUVGZGJDXFSHSJY1FTHZBKDYDPZUGDHQRED30OSMY2XJYO";
 var foursquareSecret = "CRZRFZZCTLNTJEOYWDHHKSEMH4DF4G4S0YBBMOIJJ1WYD2TE";
 var foursquareVersion = "20170116";
+var venueFoursquareID = marker.id;
 
 var foursquareURL = apiURL + venueFoursquareID + "?client_id=" + foursquareClientID +
 					"&client_secret=" + foursquareSecret + "&v=" + foursquareVersion;
 
+function getFSInfo() {
 $.ajax({
 	url: foursquareURL,
 	success: function(data) {
+		var venue = data.response.venues[0];
+		var address = data.venue.formattedAddress;
 		console.log(data);
 	}
-	error: function(status) {
-		alert("Error making ajax request to foursquare:", status);
-	}
+}).fail(function(error) {
+	alert("Error retrieving data from Foursquare");
 });
 
+}
 // ******** MAP ******** //
 
 
@@ -243,6 +247,9 @@ var initMap = function() {
 				// Change icon color back to default.
 				marker.setIcon(defaultIcon);
 			});
+
+			// Uncomment this once ajax request is built to get venue info for the infowindow.
+			//getFSInfo();
 
 			infowindow.setContent("<div>" + marker.title + "</div><div>" + marker.phone + "</div>")
 
