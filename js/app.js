@@ -123,7 +123,7 @@ var apiURL = "https://api.foursquare.com/v2/venues/";
 var foursquareClientID = "EZGUVGZGJDXFSHSJY1FTHZBKDYDPZUGDHQRED30OSMY2XJYO";
 var foursquareSecret = "CRZRFZZCTLNTJEOYWDHHKSEMH4DF4G4S0YBBMOIJJ1WYD2TE";
 var foursquareVersion = "20170116";
-var venueFoursquareID = marker.id;
+//var venueFoursquareID = marker.id;
 
 var foursquareURL = apiURL + venueFoursquareID + "?client_id=" + foursquareClientID +
 					"&client_secret=" + foursquareSecret + "&v=" + foursquareVersion;
