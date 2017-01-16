@@ -139,10 +139,10 @@ var initMap = function() {
 	var clickedIcon = makeMarkerIcon('46e91f');
 
 	// loop through neighborhoodSpots array to make markers.
-	for (var i = 0; i < neighborhoodSpots.length; i++) {
-		var title = neighborhoodSpots[i].title;
-		var phone = neighborhoodSpots[i].phone;
-		var position = neighborhoodSpots[i].location;
+	for (var i = 0; i < neighborhoodSpots.spots.length; i++) {
+		var title = neighborhoodSpots.spots[i].title;
+		var phone = neighborhoodSpots.spots[i].phone;
+		var position = neighborhoodSpots.spots[i].location;
 
 		var marker = new google.maps.Marker({
 			map: map,
