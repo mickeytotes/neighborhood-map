@@ -54,7 +54,7 @@ var listView = function(data) {
 	this.title = data.title;
 	// Make location an observable in case this needs to be changed
 	this.location = ko.observable(data.location);
-	this.type = data.type;
+	this.type = ko.observable(data.type);
 	// Create property for visible binding.
 	this.isVisible = ko.observable(true);
 }
@@ -85,7 +85,7 @@ var ViewModel = function() {
 	this.filterList = ko.computed(function() {
 		var listPlaces = self.places();
 		for (var i = 0; i < listPlaces.length; i++) {
-			if (self.selectedType() !== listPlaces[i].type) {
+			if (self.selectedType() !== listPlaces[i].type()) {
 				return listPlaces[i].isVisible(false);
 			} else {
 				return listPlaces[i].isVisible(true);
