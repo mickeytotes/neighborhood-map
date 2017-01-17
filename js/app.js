@@ -90,7 +90,7 @@ var ViewModel = function() {
 			} else {
 				return listPlaces[i].isVisible(true);
 			}
-		};
+		}
 
 		console.log("option clicked:", self.selectedType());
 	});
