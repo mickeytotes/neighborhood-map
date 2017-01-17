@@ -58,9 +58,9 @@ var listView = function(data) {
 	//this.filter = ko.observable(data.filters);
 }
 
-var filterView = function(data) {
-	this.filter = ko.observable(data.filters);
-}
+//var filterView = function(data) {
+//	this.filter = ko.observable(data.filters);
+//}
 
 
 // ****** VIEWMODEL ******** //
@@ -73,12 +73,19 @@ var ViewModel = function() {
 
 	this.options = ["Liquor Store", "Restaurant", "Dry Cleaners", "Gym"];
 
+	//this is where I left off
+	self.filterList = ko.computed(function() {
+		for (var i = 0; i < places[i]) {
+			if ()
+		}
+	});
+
 	// Push data to observable array.
 	neighborhoodSpots.spots.forEach(function(locationItem) {
 		self.places.push(new listView(locationItem));
 	});
 
-	this.filters = ko.observableArray([]);
+	//this.filters = ko.observableArray([]);
 
 	neighborhoodSpots.filters.forEach(function(filterItem) {
 		self.filters.push(new filterView(filterItem));
