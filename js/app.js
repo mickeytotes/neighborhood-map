@@ -51,9 +51,9 @@ var neighborhoodSpots = {
 	//****** VIEW ******** //
 
 var listView = function(data) {
-	this.title = ko.observable(data.title);
-	this.location = ko.observable(data.location);
-	this.type = ko.observable(data.type);
+	this.title = data.title;
+	this.location = data.location;
+	this.type = data.type;
 	// Create property for visible binding.
 	this.isVisible = ko.observable(true);
 }
