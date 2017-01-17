@@ -77,7 +77,7 @@ var ViewModel = function() {
 
 	//this is where I left off
 	this.filterList = ko.computed(function() {
-		if (self.selectedType("Liquor Store")) {
+		if (self.selectedType() == listView.type) {
 			return true;
 		}
 		console.log("option clicked:", self.selectedType());
