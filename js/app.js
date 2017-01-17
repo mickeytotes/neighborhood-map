@@ -86,9 +86,9 @@ var ViewModel = function() {
 		var listPlaces = self.places();
 		for (var i = 0; i < listPlaces.length; i++) {
 			if (self.selectedType() !== listPlaces[i].type()) {
-				return listPlaces[i].isVisible(false);
+				listPlaces[i].isVisible(false);
 			} else {
-				return listPlaces[i].isVisible(true);
+				listPlaces[i].isVisible(true);
 			}
 		}
 
