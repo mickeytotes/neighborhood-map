@@ -230,7 +230,7 @@ var ViewModel = function() {
 		}
 
 		console.log("option clicked:", self.selectedType());
-		console.log(listPlaces());
+		console.log(self.places());
 	});
 
 
