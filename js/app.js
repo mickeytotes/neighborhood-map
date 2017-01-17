@@ -263,3 +263,4 @@ var initMap = function() {
         return markerImage;
       }
 
+};
