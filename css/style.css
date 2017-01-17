@@ -1,5 +1,9 @@
 /* Get dat stylin' done!!  */
 
+h2 {
+	text-align: center;
+}
+
 #map {
 	height: 50%;
 	top: 75px;
