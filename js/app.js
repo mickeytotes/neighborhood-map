@@ -51,7 +51,7 @@ var neighborhoodSpots = {
 	//****** VIEW ******** //
 
 var listView = function(data) {
-	this.title = data.title;
+	this.title = ko.observable(data.title);
 	// Make location an observable in case this needs to be changed
 	this.location = ko.observable(data.location);
 	this.type = ko.observable(data.type);
