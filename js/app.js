@@ -75,7 +75,7 @@ var ViewModel = function() {
 	this.options = ["Liquor Store", "Restaurant", "Dry Cleaners", "Gym"];
 
 	//this is where I left off
-	self.filterList = ko.computed(function() {
+	this.filterList = ko.computed(function() {
 
 		//for (var i = 0; i < places[i]) {
 		//	if ()
