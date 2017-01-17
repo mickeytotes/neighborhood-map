@@ -23,7 +23,7 @@
 		<button data-bind= "enable: selectedType,
 							click: clearFilter">Clear</button>
 		<ul id="list" data-bind="foreach: places">
-			<li data-bind= "visible: filterList,
+			<li data-bind= "visible: isVisible,
 							text: title"></li>
 		</ul>
 	</div>

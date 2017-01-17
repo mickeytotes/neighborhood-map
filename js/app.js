@@ -54,6 +54,8 @@ var listView = function(data) {
 	this.title = ko.observable(data.title);
 	this.location = ko.observable(data.location);
 	this.type = ko.observable(data.type);
+	// Create property for visible binding.
+	this.isVisible = ko.observable(true);
 }
 
 
@@ -80,9 +82,14 @@ var ViewModel = function() {
 
 	//this is where I left off
 	this.filterList = ko.computed(function() {
-		if (this.selectedType == listView.type) {
-			return true;
+		for (var i = 0; i < this.places.length; i++) {
+			if (this.selectedType() == listView.type) {
+				return isVisible(true);
+			} else {
+				return isVisible(false);
+			}
 		}
+
 		console.log("option clicked:", self.selectedType());
 	});
 
