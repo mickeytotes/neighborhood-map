@@ -53,15 +53,6 @@ var neighborhoodSpots = {
 
 var map;
 
-var mapInfoWindow = new google.maps.InfoWindow();
-
-	var defaultIcon = makeMarkerIcon('ff2d00');
-
-	var highlightedIcon = makeMarkerIcon('631504');
-
-	var clickedIcon = makeMarkerIcon('46e91f');
-
-
 
 
 // Create empty arry to push markers into.
@@ -81,6 +72,13 @@ var initMap = function() {
 		marker.setIcon(defaultIcon);
 	});
 
+	var mapInfoWindow = new google.maps.InfoWindow();
+
+	var defaultIcon = makeMarkerIcon('ff2d00');
+
+	var highlightedIcon = makeMarkerIcon('631504');
+
+	var clickedIcon = makeMarkerIcon('46e91f');
 
 	// loop through neighborhoodSpots array to make markers.
 	for (var i = 0; i < neighborhoodSpots.spots.length; i++) {
