@@ -44,9 +44,9 @@ var neighborhoodSpots = {
     			location: {lat: 40.842125, lng: -73.939272},
     			type: "Liquor Store",
     			foursquareID: "506cc066e4b019e8dad3a401"
-			};
+			}
     	]
-	}
+	};
 
 	//****** VIEW ******** //
 
@@ -99,7 +99,7 @@ var ViewModel = function() {
 	});
 
 
-}
+};
 
 ko.applyBindings(new ViewModel());
 
@@ -231,7 +231,7 @@ var initMap = function() {
 			infowindow.setContent('');
 			infowindow.marker = marker;
 			// Open  infowinow
-			infowindow.open(map, marker)
+			infowindow.open(map, marker);
 
 			// Close infowindow on click.
 			infowindow.addListener('closeclick', function() {
@@ -243,7 +243,7 @@ var initMap = function() {
 			// Uncomment this once ajax request is built to get venue info for the infowindow.
 			//getFSInfo();
 
-			infowindow.setContent("<div>" + marker.title + "</div><div>" + marker.phone + "</div>")
+			infowindow.setContent("<div>" + marker.title + "</div><div>" + marker.phone + "</div>");
 
 			}
 		}
