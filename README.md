@@ -4,7 +4,7 @@ Project 5 for Udacity's Front-End Nanodegree Program. An interactive web applica
 
 ## gh-pages
 
-A live version of the mobile portfolio/pizzaria page is hosted on _github pages_. You can view it **[here](https://mickeytotes.github.io/neighborhood-map/)**.
+A live version of the Neighborhood Map app is hosted on _github pages_. You can view it **[here](https://mickeytotes.github.io/neighborhood-map/)**.
 
 ## APIs
 This app utilizes two different APIs:
