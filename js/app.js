@@ -68,6 +68,7 @@ var listView = function(data) {
 
 var ViewModel = function() {
 	var self = this;
+	this.selectedType = ko.observable();
 
 
 	this.places = ko.observableArray([]);
@@ -81,7 +82,7 @@ var ViewModel = function() {
 		//for (var i = 0; i < places[i]) {
 		//	if ()
 		//}
-		console.log("option clicked");
+		console.log("option clicked:", self.selectedType());
 	});
 
 	// Push data to observable array.
@@ -89,7 +90,6 @@ var ViewModel = function() {
 		self.places.push(new listView(locationItem));
 	});
 
-	this.selectedType = ko.observable();
 	this.clearFilter = function() {
 		this.selectedType(null)
 	}
