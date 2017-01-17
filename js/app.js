@@ -54,14 +54,7 @@ var listView = function(data) {
 	this.title = ko.observable(data.title);
 	this.location = ko.observable(data.location);
 	this.type = ko.observable(data.type);
-	//just added this
-	//this.filter = ko.observable(data.filters);
 }
-
-//temp comment out
-//var filterView = function(data) {
-//	this.filter = ko.observable(data.filters);
-//}
 
 
 // ****** VIEWMODEL ******** //
@@ -75,13 +68,6 @@ var ViewModel = function() {
 
 	this.options = ["Liquor Store", "Restaurant", "Dry Cleaners", "Gym"];
 
-	//this is where I left off
-	this.filterList = ko.computed(function() {
-		if (self.selectedType() == listView.type) {
-			return true;
-		}
-		console.log("option clicked:", self.selectedType());
-	});
 
 	// Push data to observable array.
 	neighborhoodSpots.spots.forEach(function(locationItem) {
@@ -92,9 +78,13 @@ var ViewModel = function() {
 		this.selectedType(null)
 	}
 
-	//this.filterPlaces = function() {
-	//	if ()
-	//}
+	//this is where I left off
+	this.filterList = ko.computed(function() {
+		if (self.selectedType() == listView.type) {
+			return true;
+		}
+		console.log("option clicked:", self.selectedType());
+	});
 
 
 }
