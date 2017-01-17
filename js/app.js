@@ -71,6 +71,8 @@ var ViewModel = function() {
 
 	this.places = ko.observableArray([]);
 
+	this.options = ["Liquor Store", "Restaurant", "Dry Cleaners", "Gym"];
+
 	// Push data to observable array.
 	neighborhoodSpots.spots.forEach(function(locationItem) {
 		self.places.push(new listView(locationItem));
