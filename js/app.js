@@ -77,11 +77,9 @@ var ViewModel = function() {
 
 	//this is where I left off
 	this.filterList = ko.computed(function() {
-
-
-		//for (var i = 0; i < places[i]) {
-		//	if ()
-		//}
+		if (self.selectedType("Liquor Store")) {
+			return true;
+		}
 		console.log("option clicked:", self.selectedType());
 	});
 

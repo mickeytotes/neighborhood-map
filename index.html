@@ -23,7 +23,8 @@
 		<button data-bind= "enable: selectedType,
 							click: clearFilter">Clear</button>
 		<ul id="list" data-bind="foreach: places">
-			<li data-bind="text: title"></li>
+			<li data-bind= "visible: filterList,
+							text: title"></li>
 		</ul>
 	</div>
 	<script src="lib/knockout-3.4.1.js"></script>
