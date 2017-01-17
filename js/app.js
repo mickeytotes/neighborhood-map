@@ -54,7 +54,7 @@ var neighborhoodSpots = {
 var map;
 
 // Create empty arry to push markers into.
-var markers = [];
+//var markers = [];
 
 // Get that map going in the map div!
 // Thanks to Google Maps API for the super helpful documentation, course, and instructions!
@@ -103,7 +103,7 @@ var initMap = function() {
 	neighborhoodSpots.spots[i].marker = marker;
 
 	// Push markers to markers[] array.
-	markers.push(marker);
+	//markers.push(marker);
 
 	//Open info window on click.
 	marker.addListener("click", function() {
@@ -188,7 +188,7 @@ var listView = function(data) {
 	// Make location an observable in case this needs to be changed
 	this.location = ko.observable(data.location);
 	this.type = ko.observable(data.type);
-	this.marker = data.marker;
+	this.marker = ko.observable(data.marker);
 	// Create property for visible binding.
 	this.isVisible = ko.observable(true);
 };
