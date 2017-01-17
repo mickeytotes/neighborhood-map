@@ -193,7 +193,6 @@ var listView = function(data) {
 	this.isVisible = ko.observable(true);
 };
 
-
 // ****** VIEWMODEL ******** //
 
 var ViewModel = function() {
