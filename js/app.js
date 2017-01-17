@@ -88,7 +88,7 @@ var ViewModel = function() {
 			} else {
 				return self.isVisible(true);
 			}
-		}
+		};
 
 		console.log("option clicked:", self.selectedType());
 	});
