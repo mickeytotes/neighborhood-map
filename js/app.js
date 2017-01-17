@@ -44,7 +44,7 @@ var neighborhoodSpots = {
     			location: {lat: 40.842125, lng: -73.939272},
     			type: "Liquor Store",
     			foursquareID: "506cc066e4b019e8dad3a401"
-			}
+			};
     	]
 	}
 
@@ -57,7 +57,7 @@ var listView = function(data) {
 	this.type = ko.observable(data.type);
 	// Create property for visible binding.
 	this.isVisible = ko.observable(true);
-}
+};
 
 
 // ****** VIEWMODEL ******** //
@@ -78,14 +78,14 @@ var ViewModel = function() {
 	});
 
 	this.clearFilter = function() {
-		this.selectedType(null)
-	}
+		this.selectedType(null);
+	};
 
 	//this is where I left off
 	this.filterList = ko.computed(function() {
 		var listPlaces = self.places();
 		for (var i = 0; i < listPlaces.length; i++) {
-			if (self.selectedType() = undefined) {
+			if (self.selectedType() === undefined) {
 				listPlaces[i].isVisible(true);
 			}
 			else if (self.selectedType() !== listPlaces[i].type()) {
