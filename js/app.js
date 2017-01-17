@@ -83,7 +83,7 @@ var ViewModel = function() {
 	//this is where I left off
 	this.filterList = ko.computed(function() {
 		for (var i = 0; i < self.places.length; i++) {
-			if (this.selectedType() == self.places[i].type) {
+			if (self.selectedType() == self.places[i].type) {
 				return self.isVisible(true);
 			} else {
 				return self.isVisible(false);
