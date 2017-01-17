@@ -223,7 +223,6 @@ var initMap = function() {
 			clearInterval(bounce);
 		}, 1000);
 	} */
-};
 
 	function fillInfoWindow(marker, infowindow) {
 		// Check if marker's window is already open.
@@ -262,3 +261,4 @@ var initMap = function() {
           new google.maps.Size(21,34));
         return markerImage;
       }
+};
