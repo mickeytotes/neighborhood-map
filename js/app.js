@@ -58,6 +58,7 @@ var listView = function(data) {
 	//this.filter = ko.observable(data.filters);
 }
 
+//temp comment out
 //var filterView = function(data) {
 //	this.filter = ko.observable(data.filters);
 //}
@@ -85,11 +86,13 @@ var ViewModel = function() {
 		self.places.push(new listView(locationItem));
 	});
 
+	//temp comment out
 	//this.filters = ko.observableArray([]);
 
-	neighborhoodSpots.filters.forEach(function(filterItem) {
-		self.filters.push(new filterView(filterItem));
-	});
+	//temp comment out
+	//neighborhoodSpots.filters.forEach(function(filterItem) {
+	//	self.filters.push(new filterView(filterItem));
+	//});
 
 
 
