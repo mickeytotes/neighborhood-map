@@ -77,6 +77,7 @@ var ViewModel = function() {
 	//this is where I left off
 	this.filterList = ko.computed(function() {
 
+
 		//for (var i = 0; i < places[i]) {
 		//	if ()
 		//}
@@ -87,34 +88,6 @@ var ViewModel = function() {
 	neighborhoodSpots.spots.forEach(function(locationItem) {
 		self.places.push(new listView(locationItem));
 	});
-
-	//temp comment out
-	//this.filters = ko.observableArray([]);
-
-	//temp comment out
-	//neighborhoodSpots.filters.forEach(function(filterItem) {
-	//	self.filters.push(new filterView(filterItem));
-	//});
-
-
-
-	/*self.filters = ko.observableArray([]);
-	self.filter = ko.observable('');
-	self.places = ko.observableArray(neighborhoodSpots.spots);
-	self.filteredSpots = ko.computed(function() {
-		var filter = self.filter();
-		if (!filter || filter == "None") {
-			return self.places();
-		} else {
-			return ko.utils.arrayFilter(self.spots(), function(i) {
-				return i.type == filter;
-			});
-		}
-	});*/
-
-	//neighborhoodSpots.filters.forEach(function(filterItem) {
-	//	self.filters.push(new filterView(filterItem));
-	//});
 
 	this.selectedType = ko.observable();
 	this.clearFilter = function() {
