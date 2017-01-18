@@ -145,10 +145,10 @@ var initMap = function() {
 		// Check if marker's window is already open.
 		if (infowindow.marker != marker) {
 			// Clear infowindow
-			infowindow.setContent('');
+			//infowindow.setContent('');
 			infowindow.marker = marker;
 			// Open  infowinow
-			infowindow.open(map, marker);
+			//infowindow.open(map, marker);
 
 			// Close infowindow on click.
 			infowindow.addListener('closeclick', function() {
@@ -158,9 +158,9 @@ var initMap = function() {
 			});
 
 			// Uncomment this once ajax request is built to get venue info for the infowindow.
-			//getFSInfo();
+			getFSInfo(marker, infowindow);
 
-			infowindow.setContent("<div>" + marker.title + "</div><div>" + marker.phone + "</div>");
+			//infowindow.setContent("<div>" + marker.title + "</div><div>" + marker.phone + "</div>");
 
 			}
 		}
@@ -254,21 +254,21 @@ var ViewModel = function() {
 
 };
 
-// This is where ko bindings were originally applied.
 
-/*
+
 // ********* foursquare api // ************
 
 var apiURL = "https://api.foursquare.com/v2/venues/";
 var foursquareClientID = "EZGUVGZGJDXFSHSJY1FTHZBKDYDPZUGDHQRED30OSMY2XJYO";
 var foursquareSecret = "CRZRFZZCTLNTJEOYWDHHKSEMH4DF4G4S0YBBMOIJJ1WYD2TE";
 var foursquareVersion = "20170116";
-var venueFoursquareID = marker.id;
 
-var foursquareURL = apiURL + venueFoursquareID + "?client_id=" + foursquareClientID +
-					"&client_secret=" + foursquareSecret + "&v=" + foursquareVersion;
 
 function getFSInfo(marker, infowindow) {
+	var venueFoursquareID = marker.id;
+
+	var foursquareURL = apiURL + venueFoursquareID + "?client_id=" + foursquareClientID +
+					"&client_secret=" + foursquareSecret + "&v=" + foursquareVersion;
 $.ajax({
 	url: foursquareURL,
 	success: function(data) {
@@ -279,6 +279,8 @@ $.ajax({
 		infowindow.setContent("<div>" + marker.title + "</div><div>" + phone +
 			"</div><div>" + address + "</div>");
 
+		infowindow.open(map, marker);
+
 
 		console.log(data);
 	}
@@ -286,5 +288,5 @@ $.ajax({
 	alert("Error retrieving data from Foursquare");
 });
 
-}*/
+}
 
