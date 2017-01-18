@@ -251,8 +251,6 @@ var ViewModel = function() {
         google.maps.event.trigger(location.marker,'click');
       };
 
-	}
-
 
 };
 
