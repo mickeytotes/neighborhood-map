@@ -88,6 +88,7 @@ var initMap = function() {
 		var phone = neighborhoodSpots[i].phone;
 		var position = neighborhoodSpots[i].location;
 		var id = neighborhoodSpots[i].foursquareID;
+		var type = neighborhoodSpots[i].type;
 
 		var marker = new google.maps.Marker({
 			map: map,
@@ -97,7 +98,8 @@ var initMap = function() {
 			// markers drop in when page loads.
 			animation: google.maps.Animation.DROP,
 			icon: defaultIcon,
-			id: id
+			id: id,
+			type: type
 		});
 
 
@@ -169,6 +171,11 @@ var initMap = function() {
           new google.maps.Size(21,34));
         return markerImage;
       }
+
+      //set marker visible/invisible
+      //var markerInvisible = function(marker) {
+      	//	marker.setVisible(false);
+     // }
 
       // Apply Knockout.js bindings here to ensure markers are created first.
       ko.applyBindings(new ViewModel());
