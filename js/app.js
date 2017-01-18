@@ -1,9 +1,6 @@
 /* ****** MODEL ******** */
 
 var neighborhoodSpots = [
-//{
-		//filters: ["None", "Restaurant", "Gym", "Dry Cleaners"],
-		//spots: [
 			{
 				title: "Saggio",
 				phone: "212-795-3080",
@@ -47,17 +44,12 @@ var neighborhoodSpots = [
     			foursquareID: "506cc066e4b019e8dad3a401"
 			}
     	]
-	//}
 
 // ******** MAP ******** //
 
 
 var map;
 
-
-
-// Create empty arry to push markers into.
-//var markers = [];
 
 // Get that map going in the map div!
 // Callback function for the google maps request in index.html
@@ -88,7 +80,6 @@ var initMap = function() {
 		var phone = neighborhoodSpots[i].phone;
 		var position = neighborhoodSpots[i].location;
 		var id = neighborhoodSpots[i].foursquareID;
-		//var type = neighborhoodSpots[i].type;
 
 		var marker = new google.maps.Marker({
 			map: map,
@@ -99,22 +90,10 @@ var initMap = function() {
 			animation: google.maps.Animation.DROP,
 			icon: defaultIcon,
 			id: id
-			//type: type
 		});
-
-
-/*	// Make marker bounce on click.
-	marker.addListener("click", makeBounce); */
 
 	// Make each marker a property of its corresponding neighborhoodSpot.
 	neighborhoodSpots[i].marker = marker;
-
-	// Test event listener to try out .setVisible
-	//marker.addListener("click", removeMarker(marker);
-
-	//var removeMarker(marker) {
-		//marker.setVisible(false);
-	//}
 
 	//Open info window on click.
 	marker.addListener("click", function() {
