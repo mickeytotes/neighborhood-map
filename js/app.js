@@ -1,7 +1,6 @@
 /* ****** MODEL ******** */
 
 var neighborhoodSpots = [
-
 //{
 		//filters: ["None", "Restaurant", "Gym", "Dry Cleaners"],
 		//spots: [
@@ -61,6 +60,7 @@ var map;
 //var markers = [];
 
 // Get that map going in the map div!
+// Callback function for the google maps request in index.html
 // Thanks to Google Maps API for the super helpful documentation, course, and instructions!
 var initMap = function() {
 	map = new google.maps.Map(document.getElementById('map'), {
@@ -104,6 +104,7 @@ var initMap = function() {
 /*	// Make marker bounce on click.
 	marker.addListener("click", makeBounce); */
 
+	// Make each marker a property of its corresponding neighborhoodSpot.
 	neighborhoodSpots[i].marker = marker;
 
 	//Open info window on click.
