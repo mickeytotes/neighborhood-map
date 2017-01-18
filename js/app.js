@@ -104,9 +104,6 @@ var initMap = function() {
 
 	neighborhoodSpots.spots[i].marker = marker;
 
-	// Apply Knockout.js bindings here to ensure markers are created first.
-     ko.applyBindings(new ViewModel());
-
 	//Open info window on click.
 	marker.addListener("click", function() {
 		fillInfoWindow(this, mapInfoWindow);
@@ -131,6 +128,10 @@ var initMap = function() {
 		//}
 	});
 }
+
+	// Apply Knockout.js bindings here to ensure markers are created first.
+    ko.applyBindings(new ViewModel());
+
 	function fillInfoWindow(marker, infowindow) {
 		// Check if marker's window is already open.
 		if (infowindow.marker != marker) {
