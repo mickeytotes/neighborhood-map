@@ -276,6 +276,8 @@ $.ajax({
 		var address = venue.formattedAddress;
 		var phone = venue.formattedPhone;
 
+		console.log(venue);
+
 		infowindow.setContent("<div>" + marker.title + "</div><div>" + phone +
 			"</div><div>" + address + "</div>");
 
