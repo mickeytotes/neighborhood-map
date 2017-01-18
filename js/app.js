@@ -109,6 +109,11 @@ var initMap = function() {
 	// Make each marker a property of its corresponding neighborhoodSpot.
 	neighborhoodSpots[i].marker = marker;
 
+	// Test event listener to try out .setVisible
+	google.maps.event.addListener(marker, "click", function() {
+		marker.setVisible(false);
+	});
+
 	//Open info window on click.
 	marker.addListener("click", function() {
 		fillInfoWindow(this, mapInfoWindow);
