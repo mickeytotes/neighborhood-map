@@ -61,10 +61,10 @@ var initMap = function() {
 	});
 
 	// Close infowindow when any other portion of the map is clicked.
-	google.maps.event.addListener(map, "click", function(event) {
-		mapInfoWindow.close();
-		marker.setIcon(defaultIcon);
-	});
+	//google.maps.event.addListener(map, "click", function(event) {
+	//	mapInfoWindow.close();
+	//	marker.setIcon(defaultIcon);
+	//});
 
 	var mapInfoWindow = new google.maps.InfoWindow();
 
@@ -117,6 +117,12 @@ var initMap = function() {
 		//} else {
 		//	this.setIcon(defaultIcon);
 		//}
+	});
+
+// Close infowindow when any other portion of the map is clicked.
+	google.maps.event.addListener(map, "click", function(event) {
+		mapInfoWindow.close();
+		marker.setIcon(defaultIcon);
 	});
 }
 
