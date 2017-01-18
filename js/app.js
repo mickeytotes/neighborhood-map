@@ -197,7 +197,7 @@ var listView = function(data) {
 	// Make location an observable in case this needs to be changed
 	this.location = ko.observable(data.location);
 	this.type = ko.observable(data.type);
-	this.marker = ko.observable(data.marker);
+	this.marker = data.marker;
 	// Create property for visible binding.
 	this.isVisible = ko.observable(true);
 };
@@ -233,11 +233,11 @@ var ViewModel = function() {
 			else if (self.selectedType() !== listPlaces[i].type()) {
 				listPlaces[i].isVisible(false);
 				//visibility for the map marker through gmaps api .setVisible method
-				//listPlaces[i].marker.setVisible(false);
+				listPlaces[i].marker.setVisible(false);
 			} else {
 				listPlaces[i].isVisible(true);
 				//visibility for the map marker through gmaps api .setVisible method
-				//listPlaces[i].marker.setVisible(true);
+				listPlaces[i].marker.setVisible(true);
 			}
 		}
 
