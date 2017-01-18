@@ -104,6 +104,9 @@ var initMap = function() {
 
 	neighborhoodSpots.spots[i].marker = marker;
 
+	// Apply Knockout.js bindings here to ensure markers are created first.
+     ko.applyBindings(new ViewModel());
+
 	//Open info window on click.
 	marker.addListener("click", function() {
 		fillInfoWindow(this, mapInfoWindow);
@@ -165,9 +168,6 @@ var initMap = function() {
           new google.maps.Size(21,34));
         return markerImage;
       }
-
-     // Apply Knockout.js bindings here to ensure markers are created first.
-     ko.applyBindings(new ViewModel());
 
 };
 
