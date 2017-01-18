@@ -229,6 +229,7 @@ var ViewModel = function() {
 		for (var i = 0; i < listPlaces.length; i++) {
 			if (self.selectedType() === undefined) {
 				listPlaces[i].isVisible(true);
+				listPlaces[i].marker.setVisible(true);
 			}
 			else if (self.selectedType() !== listPlaces[i].type()) {
 				console.log(listPlaces[i]);
