@@ -48,7 +48,7 @@ var neighborhoodSpots = [
     			foursquareID: "506cc066e4b019e8dad3a401"
 			}
     	]
-	}//
+	//}
 
 // ******** MAP ******** //
 
