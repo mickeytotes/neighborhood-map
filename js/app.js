@@ -226,11 +226,11 @@ var ViewModel = function() {
 			else if (self.selectedType() !== listPlaces[i].type()) {
 				listPlaces[i].isVisible(false);
 				//visibility for the map marker through gmaps api .setVisible method
-				//listPlaces[i].marker.setVisible(false);
+				listPlaces[i].marker.setVisible(false);
 			} else {
 				listPlaces[i].isVisible(true);
 				//visibility for the map marker through gmaps api .setVisible method
-				//listPlaces[i].marker.setVisible(true);
+				listPlaces[i].marker.setVisible(true);
 			}
 		}
 
