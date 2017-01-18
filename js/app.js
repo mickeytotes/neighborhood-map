@@ -110,7 +110,7 @@ var initMap = function() {
 	neighborhoodSpots[i].marker = marker;
 
 	// Test event listener to try out .setVisible
-	google.maps.event.addListener(marker, "click", function() {
+	marker.addListener("click", function() {
 		marker.setVisible(false);
 	});
 
