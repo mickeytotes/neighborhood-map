@@ -84,10 +84,10 @@ var initMap = function() {
 
 	// loop through neighborhoodSpots array to make markers.
 	for (var i = 0; i < neighborhoodSpots.length; i++) {
-		var title = neighborhoodSpots.[i].title;
-		var phone = neighborhoodSpots.[i].phone;
-		var position = neighborhoodSpots.[i].location;
-		var id = neighborhoodSpots.[i].foursquareID;
+		var title = neighborhoodSpots[i].title;
+		var phone = neighborhoodSpots[i].phone;
+		var position = neighborhoodSpots[i].location;
+		var id = neighborhoodSpots[i].foursquareID;
 
 		var marker = new google.maps.Marker({
 			map: map,
