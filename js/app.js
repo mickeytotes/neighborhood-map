@@ -88,7 +88,7 @@ var initMap = function() {
 		var phone = neighborhoodSpots[i].phone;
 		var position = neighborhoodSpots[i].location;
 		var id = neighborhoodSpots[i].foursquareID;
-		var type = neighborhoodSpots[i].type;
+		//var type = neighborhoodSpots[i].type;
 
 		var marker = new google.maps.Marker({
 			map: map,
@@ -98,8 +98,8 @@ var initMap = function() {
 			// markers drop in when page loads.
 			animation: google.maps.Animation.DROP,
 			icon: defaultIcon,
-			id: id,
-			type: type
+			id: id
+			//type: type
 		});
 
 
