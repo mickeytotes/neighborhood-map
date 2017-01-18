@@ -247,6 +247,12 @@ var ViewModel = function() {
 		//console.log(self.places());
 	});
 
+	this.openFromList = function(location) {
+        google.maps.event.trigger(location.marker,'click');
+      };
+
+	}
+
 
 };
 

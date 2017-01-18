@@ -24,7 +24,8 @@
 							click: clearFilter">Clear</button>
 		<ul id="list" data-bind="foreach: places">
 			<li data-bind= "visible: isVisible,
-							text: title"></li>
+							text: title,
+							click: $root.openFromList"></li>
 		</ul>
 	</div>
 	<script src="lib/knockout-3.4.1.js"></script>
