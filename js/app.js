@@ -183,7 +183,7 @@ var listView = function(data) {
 	// Make location an observable in case this needs to be changed
 	this.location = ko.observable(data.location);
 	this.type = ko.observable(data.type);
-	this.marker = data.marker;
+	this.marker = ko.observable(data.marker);
 	// Create property for visible binding.
 	this.isVisible = ko.observable(true);
 };
