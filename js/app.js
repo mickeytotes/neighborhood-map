@@ -104,9 +104,6 @@ var initMap = function() {
 
 	neighborhoodSpots.spots[i].marker = marker;
 
-	// Push markers to markers[] array.
-	//markers.push(marker);
-
 	//Open info window on click.
 	marker.addListener("click", function() {
 		fillInfoWindow(this, mapInfoWindow);
@@ -131,17 +128,6 @@ var initMap = function() {
 		//}
 	});
 }
-
-/*	function makeBounce() {
-		var bounce = setInterval(function() {
-			marker.setAnimation(google.maps.Animation.BOUNCE);
-		}, 100);
-
-		setTimeout(function() {
-			clearInterval(bounce);
-		}, 1000);
-	} */
-
 	function fillInfoWindow(marker, infowindow) {
 		// Check if marker's window is already open.
 		if (infowindow.marker != marker) {
@@ -179,6 +165,10 @@ var initMap = function() {
           new google.maps.Size(21,34));
         return markerImage;
       }
+
+     // Apply Knockout.js bindings here to ensure markers are created first.
+     ko.applyBindings(new ViewModel());
+
 };
 
 
@@ -241,7 +231,7 @@ var ViewModel = function() {
 
 };
 
-ko.applyBindings(new ViewModel());
+// This is where ko bindings were originally applied.
 
 /*
 // ********* foursquare api // ************
