@@ -107,12 +107,14 @@ var initMap = function() {
 	marker.addListener("click", makeBounce); */
 
 	// Make each marker a property of its corresponding neighborhoodSpot.
-	neighborhoodSpots[i].marker = marker;
+	//neighborhoodSpots[i].marker = marker;
 
 	// Test event listener to try out .setVisible
-	marker.addListener("click", function() {
-		marker.setVisible(false);
-	});
+	//marker.addListener("click", removeMarker(marker);
+
+	//var removeMarker(marker) {
+		//marker.setVisible(false);
+	//}
 
 	//Open info window on click.
 	marker.addListener("click", function() {
