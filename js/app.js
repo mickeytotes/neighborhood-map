@@ -104,7 +104,7 @@ var initMap = function() {
 /*	// Make marker bounce on click.
 	marker.addListener("click", makeBounce); */
 
-	neighborhoodSpots.[i].marker = marker;
+	neighborhoodSpots[i].marker = marker;
 
 	//Open info window on click.
 	marker.addListener("click", function() {
