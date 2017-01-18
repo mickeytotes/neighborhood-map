@@ -273,8 +273,8 @@ $.ajax({
 	url: foursquareURL,
 	success: function(data) {
 		var venue = data.response.venue;
-		var address = venue.formattedAddress;
-		var phone = venue.formattedPhone;
+		var address = venue.location.formattedAddress;
+		var phone = venue.contact.formattedPhone;
 
 		console.log(venue);
 
