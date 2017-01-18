@@ -1,8 +1,10 @@
 /* ****** MODEL ******** */
 
-var neighborhoodSpots = {
-		filters: ["None", "Restaurant", "Gym", "Dry Cleaners"],
-		spots: [
+var neighborhoodSpots = [
+
+//{
+		//filters: ["None", "Restaurant", "Gym", "Dry Cleaners"],
+		//spots: [
 			{
 				title: "Saggio",
 				phone: "212-795-3080",
@@ -46,7 +48,7 @@ var neighborhoodSpots = {
     			foursquareID: "506cc066e4b019e8dad3a401"
 			}
     	]
-	}
+	}//
 
 // ******** MAP ******** //
 
@@ -81,11 +83,11 @@ var initMap = function() {
 	var clickedIcon = makeMarkerIcon('46e91f');
 
 	// loop through neighborhoodSpots array to make markers.
-	for (var i = 0; i < neighborhoodSpots.spots.length; i++) {
-		var title = neighborhoodSpots.spots[i].title;
-		var phone = neighborhoodSpots.spots[i].phone;
-		var position = neighborhoodSpots.spots[i].location;
-		var id = neighborhoodSpots.spots[i].foursquareID;
+	for (var i = 0; i < neighborhoodSpots.length; i++) {
+		var title = neighborhoodSpots.[i].title;
+		var phone = neighborhoodSpots.[i].phone;
+		var position = neighborhoodSpots.[i].location;
+		var id = neighborhoodSpots.[i].foursquareID;
 
 		var marker = new google.maps.Marker({
 			map: map,
@@ -102,7 +104,7 @@ var initMap = function() {
 /*	// Make marker bounce on click.
 	marker.addListener("click", makeBounce); */
 
-	neighborhoodSpots.spots[i].marker = marker;
+	neighborhoodSpots.[i].marker = marker;
 
 	//Open info window on click.
 	marker.addListener("click", function() {
@@ -198,7 +200,7 @@ var ViewModel = function() {
 
 
 	// Push data to observable array.
-	neighborhoodSpots.spots.forEach(function(locationItem) {
+	neighborhoodSpots.forEach(function(locationItem) {
 		self.places.push(new listView(locationItem));
 	});
 
