@@ -129,9 +129,6 @@ var initMap = function() {
 	});
 }
 
-	// Apply Knockout.js bindings here to ensure markers are created first.
-    ko.applyBindings(new ViewModel());
-
 	function fillInfoWindow(marker, infowindow) {
 		// Check if marker's window is already open.
 		if (infowindow.marker != marker) {
@@ -170,6 +167,8 @@ var initMap = function() {
         return markerImage;
       }
 
+      // Apply Knockout.js bindings here to ensure markers are created first.
+      ko.applyBindings(new ViewModel());
 };
 
 
