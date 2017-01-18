@@ -234,10 +234,12 @@ var ViewModel = function() {
 				listPlaces[i].isVisible(false);
 				//visibility for the map marker through gmaps api .setVisible method
 				//listPlaces[i].marker.setVisible(false);
+				marker.setVisible(false);
 			} else {
 				listPlaces[i].isVisible(true);
 				//visibility for the map marker through gmaps api .setVisible method
 				//listPlaces[i].marker.setVisible(true);
+				marker.setVisible(true);
 			}
 		}
 
