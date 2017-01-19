@@ -90,7 +90,7 @@ var initMap = function() {
 
 
 	marker.addListener("click", function() {
-		marker.setAnimation(4);
+		this.setAnimation(4);
 		//Open info window on click.
 		fillInfoWindow(this, mapInfoWindow);
 		// change clicked icon's color.
