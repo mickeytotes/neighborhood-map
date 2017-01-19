@@ -277,3 +277,11 @@ $.ajax({
 function googleError() {
 	alert("Google Maps failed to load. Check internet connection or try again later.");
 };
+
+//slider provided by Kasper Taeymans on stackoverflow.com
+//http://stackoverflow.com/questions/21416282/slide-a-div-in-
+//from-off-screen-and-then-back-on-toggle
+
+$("#filter-button").on("click", function() {
+	$("#list-container").toggleClass("closed");
+})

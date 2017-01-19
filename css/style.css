@@ -16,6 +16,11 @@ h2 {
 	z-index: -1;
 }
 
+#filter-button {
+	position: relative;
+	top: 460px;
+}
+
 #list-container {
 	position: relative;
 	width: 100%;
@@ -25,7 +30,14 @@ h2 {
 	border: solid black 1px;
 }
 
-/*#list-container {
-	position: relative;
-	top:360px;
-}*/
+
+.closed {
+    left: -1200px;
+}
+
+.transition {
+  -webkit-transition: left 0.3s ease-out;  /* Chrome 1-25, Safari 3.2+ */
+     -moz-transition: left 0.3s ease-out;  /* Firefox 4-15 */
+       -o-transition: left 0.3s ease-out;  /* Opera 10.50–12.00 */
+          transition: left 0.3s ease-out;  /* Chrome 26, Firefox 16+, IE 10+, Opera 12.10+ */
+}
