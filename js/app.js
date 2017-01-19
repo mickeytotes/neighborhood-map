@@ -237,6 +237,8 @@ var ViewModel = function() {
 
 // ********* foursquare api // ************
 
+// Used to grab location's phone number and formatted address for the infowindow.
+
 var apiURL = "https://api.foursquare.com/v2/venues/";
 var foursquareClientID = "EZGUVGZGJDXFSHSJY1FTHZBKDYDPZUGDHQRED30OSMY2XJYO";
 var foursquareSecret = "CRZRFZZCTLNTJEOYWDHHKSEMH4DF4G4S0YBBMOIJJ1WYD2TE";
@@ -273,5 +275,5 @@ $.ajax({
 
 // This is called by the Google Maps request if the map request fails.
 function googleError() {
-	alert("Google Maps failed to load. Check internet connection or try again later");
+	alert("Google Maps failed to load. Check internet connection or try again later.");
 };
