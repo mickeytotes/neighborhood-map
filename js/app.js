@@ -245,7 +245,7 @@ function googleError() {
 	alert("Google Maps failed to load. Check internet connection or try again later.");
 }
 
-//slider provided by Kasper Taeymans on stackoverflow.com
+//slider based on Kasper Taeymans' on stackoverflow.com
 //http://stackoverflow.com/questions/21416282/slide-a-div-in-
 //from-off-screen-and-then-back-on-toggle
 
