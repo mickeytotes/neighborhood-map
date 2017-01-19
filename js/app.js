@@ -110,11 +110,8 @@ var initMap = function() {
 	function fillInfoWindow(marker, infowindow) {
 		// Check if marker's window is already open.
 		if (infowindow.marker != marker) {
-			// Clear infowindow
-			//infowindow.setContent('');
+
 			infowindow.marker = marker;
-			// Open  infowinow
-			//infowindow.open(map, marker);
 
 			// Close infowindow on click.
 			infowindow.addListener('closeclick', function() {
