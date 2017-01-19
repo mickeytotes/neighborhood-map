@@ -162,11 +162,12 @@ var listView = function(data) {
 
 var ViewModel = function() {
 	var self = this;
-	this.selectedType = ko.observable();
 
+	this.selectedType = ko.observable();
 
 	this.places = ko.observableArray([]);
 
+	// Array for the options menu.
 	this.options = ["Liquor Store", "Restaurant", "Dry Cleaners", "Gym"];
 
 
@@ -179,7 +180,7 @@ var ViewModel = function() {
 		this.selectedType(null);
 	};
 
-	//this is where I left off
+	// This handles the visibility of the list items, as well as markers.
 	this.filterList = ko.computed(function() {
 		var listPlaces = self.places();
 		for (var i = 0; i < listPlaces.length; i++) {
@@ -198,9 +199,6 @@ var ViewModel = function() {
 				listPlaces[i].marker.setVisible(true);
 			}
 		}
-
-		console.log("option clicked:", self.selectedType());
-		//console.log(self.places());
 	});
 
 	this.openFromList = function(location) {
@@ -226,26 +224,23 @@ function getFSInfo(marker, infowindow) {
 
 	var foursquareURL = apiURL + venueFoursquareID + "?client_id=" + foursquareClientID +
 					"&client_secret=" + foursquareSecret + "&v=" + foursquareVersion;
-$.ajax({
-	url: foursquareURL,
-	success: function(data) {
-		var venue = data.response.venue;
-		var address = venue.location.formattedAddress;
-		var phone = venue.contact.formattedPhone;
+	$.ajax({
+		url: foursquareURL,
+		success: function(data) {
+			var venue = data.response.venue;
+			var address = venue.location.formattedAddress;
+			var phone = venue.contact.formattedPhone;
 
-		console.log(venue);
+			infowindow.setContent("<div>" + marker.title + "</div><div>" + phone +
+				"</div><div>" + address + "</div>");
 
-		infowindow.setContent("<div>" + marker.title + "</div><div>" + phone +
-			"</div><div>" + address + "</div>");
+			infowindow.open(map, marker);
 
-		infowindow.open(map, marker);
-
-
-		console.log(data);
-	}
-}).fail(function(error) {
-	alert("Error retrieving data from Foursquare");
-});
+		}
+	//If foursquare api fails:
+	}).fail(function(error) {
+		alert("Error retrieving data from Foursquare");
+	});
 
 }
 
