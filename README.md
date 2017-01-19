@@ -26,5 +26,7 @@ This app utilizes two different APIs:
   - https://github.com/acrobat130/NeighborhoodMap/blob/master/app.js
   - https://github.com/renurevzranju/map/blob/master/js/app.js
 
+  And an extra special thanks to Sarah Maris for here one on one guidance, as well as putting up with me on the [Udacity Forums](https://discussions.udacity.com/t/having-trouble-filtering-items/211011/14)
+
 ## License
 Code released under the [MIT License](/LICENSE.txt)
