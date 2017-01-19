@@ -18,13 +18,13 @@ h2 {
 
 #filter-button {
 	position: relative;
-	top: 460px;
+	top: 415px;
 }
 
 #list-container {
 	position: relative;
 	width: 100%;
-	top: 480px;
+	top: 430px;
 	background-color: white;
 	z-index: 0;
 	border: solid black 1px;
