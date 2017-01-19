@@ -5,6 +5,7 @@ Project 5 for Udacity's Front-End Nanodegree Program. An interactive web applica
 ## Installation
 1. Install/clone the repo.
 2. Launch `index.html` in your browser of choice!
+3. or...
 
 ## gh-pages
 
