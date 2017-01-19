@@ -37,7 +37,7 @@ var neighborhoodSpots = [
     			type: "Liquor Store",
     			foursquareID: "506cc066e4b019e8dad3a401"
 			}
-    	]
+    	];
 
 // ******** MAP ******** //
 
@@ -241,13 +241,12 @@ function getFSInfo(marker, infowindow) {
 	}).fail(function(error) {
 		alert("Error retrieving data from Foursquare");
 	});
-
 }
 
 // This is called by the Google Maps request if the map request fails.
 function googleError() {
 	alert("Google Maps failed to load. Check internet connection or try again later.");
-};
+}
 
 //slider provided by Kasper Taeymans on stackoverflow.com
 //http://stackoverflow.com/questions/21416282/slide-a-div-in-
@@ -255,4 +254,4 @@ function googleError() {
 
 $("#filter-button").on("click", function() {
 	$("#list-container").toggleClass("closed");
-})
+});
