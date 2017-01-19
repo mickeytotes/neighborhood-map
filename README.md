@@ -2,6 +2,10 @@
 
 Project 5 for Udacity's Front-End Nanodegree Program. An interactive web application that presents information about a set of locations in a given Neighborhood.
 
+## Installation
+1. Install/clone the repo.
+2. Launch `index.html` in your browser of choice!
+
 ## gh-pages
 
 A live version of the Neighborhood Map app is hosted on _github pages_. You can view it **[here](https://mickeytotes.github.io/neighborhood-map/)**.
