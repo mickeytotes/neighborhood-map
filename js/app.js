@@ -93,6 +93,8 @@ var initMap = function() {
 		fillInfoWindow(this, mapInfoWindow);
 		// change clicked icon's color.
 		this.setIcon(clickedIcon);
+		// Re-center map.
+		map.panTo(marker.getPosition());
 	});
 
 	// Change marker color when mouse hovers over marker.
