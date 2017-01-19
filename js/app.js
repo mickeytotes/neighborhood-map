@@ -147,9 +147,9 @@ var initMap = function() {
 //  ****** VIEW ******** //
 
 var listView = function(data) {
-	this.title = data.title;
-	this.location = data.location;
-	this.type = data.type;
+	this.title = ko.observable(data.title);
+	this.location = ko.observable(data.location);
+	this.type = ko.observable(data.type);
 	this.marker = data.marker;
 	// Create property for visible binding.
 	this.isVisible = ko.observable(true);
