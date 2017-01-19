@@ -271,3 +271,7 @@ $.ajax({
 
 }
 
+// This is called by the Google Maps request if the map request fails.
+function googleError() {
+	alert("Google Maps failed to load. Check internet connection or try again later");
+};
