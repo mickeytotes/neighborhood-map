@@ -115,7 +115,8 @@ var initMap = function() {
 
 			// Close infowindow on click.
 			infowindow.addListener('closeclick', function() {
-				infowindow.marker(null);
+				//infowindow.marker(null);
+				mapInfoWindow.close();
 				// Change icon color back to default.
 				marker.setIcon(defaultIcon);
 			});
