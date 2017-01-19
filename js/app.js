@@ -90,11 +90,10 @@ var initMap = function() {
 
 
 	marker.addListener("click", function() {
+		// Bounce marker.
 		this.setAnimation(4);
-		//Open info window on click.
+		// Open info window.
 		fillInfoWindow(this, mapInfoWindow);
-		// change clicked icon's color.
-		//this.setIcon(clickedIcon);
 		// Re-center map.
 		map.panTo(marker.getPosition());
 	});
