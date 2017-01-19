@@ -149,7 +149,7 @@ var initMap = function() {
 
 //  ****** VIEW ******** //
 
-var listView = function(data) {
+var ListView = function(data) {
 	this.title = ko.observable(data.title);
 	this.location = ko.observable(data.location);
 	this.type = ko.observable(data.type);
@@ -173,7 +173,7 @@ var ViewModel = function() {
 
 	// Push data to observable array.
 	neighborhoodSpots.forEach(function(locationItem) {
-		self.places.push(new listView(locationItem));
+		self.places.push(new ListView(locationItem));
 	});
 
 	this.clearFilter = function() {
