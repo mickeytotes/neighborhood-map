@@ -186,7 +186,6 @@ var ViewModel = function() {
 				listPlaces[i].marker.setVisible(true);
 			}
 			else if (self.selectedType() !== listPlaces[i].type()) {
-				console.log(listPlaces[i]);
 				listPlaces[i].isVisible(false);
 				//visibility for the map marker through gmaps api .setVisible method
 				listPlaces[i].marker.setVisible(false);
