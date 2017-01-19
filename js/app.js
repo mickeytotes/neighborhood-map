@@ -88,24 +88,26 @@ var initMap = function() {
 	// Make each marker a property of its corresponding neighborhoodSpot.
 	neighborhoodSpots[i].marker = marker;
 
-	//Open info window on click.
+
 	marker.addListener("click", function() {
+		marker.setAnimation(4);
+		//Open info window on click.
 		fillInfoWindow(this, mapInfoWindow);
 		// change clicked icon's color.
-		this.setIcon(clickedIcon);
+		//this.setIcon(clickedIcon);
 		// Re-center map.
 		map.panTo(marker.getPosition());
 	});
 
 	// Change marker color when mouse hovers over marker.
-	//marker.addListener("mouseover", function() {
-	//	this.setIcon(highlightedIcon);
-	//});
+	marker.addListener("mouseover", function() {
+		this.setIcon(highlightedIcon);
+	});
 
 	// Use default color when not hovering over marker.
-	//marker.addListener("mouseout", function() {
-	//	this.setIcon(defaultIcon);
-	//});
+	marker.addListener("mouseout", function() {
+		this.setIcon(defaultIcon);
+	});
 }
 
 	// Called when each marker is clicked. Populates infowindow with corresponding information.
