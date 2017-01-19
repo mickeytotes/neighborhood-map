@@ -41,7 +41,6 @@ var neighborhoodSpots = [
 
 // ******** MAP ******** //
 
-
 var map;
 
 
@@ -68,7 +67,7 @@ var initMap = function() {
 
 	var clickedIcon = makeMarkerIcon('46e91f');
 
-	// loop through neighborhoodSpots array to make markers.
+	// loop through neighborhoodSpots array to make markers that correspond to each "spot."
 	for (var i = 0; i < neighborhoodSpots.length; i++) {
 		var title = neighborhoodSpots[i].title;
 		var phone = neighborhoodSpots[i].phone;
@@ -104,16 +103,10 @@ var initMap = function() {
 	// Use default color when not hovering over marker.
 	marker.addListener("mouseout", function() {
 		this.setIcon(defaultIcon);
-
-		// Make sure icon hasn't been clicked.
-		//if (this.setIcon(clickedIcon) = true) {
-		//this.setIcon(clickedIcon);
-		//} else {
-		//	this.setIcon(defaultIcon);
-		//}
 	});
 }
 
+	// Called when each marker is clicked. Populates infowindow with corresponding information.
 	function fillInfoWindow(marker, infowindow) {
 		// Check if marker's window is already open.
 		if (infowindow.marker != marker) {
@@ -130,11 +123,8 @@ var initMap = function() {
 				marker.setIcon(defaultIcon);
 			});
 
-			// Uncomment this once ajax request is built to get venue info for the infowindow.
+			// Call ajax request to get info from foursquare and populate infowindow.
 			getFSInfo(marker, infowindow);
-
-			//infowindow.setContent("<div>" + marker.title + "</div><div>" + marker.phone + "</div>");
-
 			}
 		}
 
@@ -152,24 +142,17 @@ var initMap = function() {
         return markerImage;
       }
 
-      //set marker visible/invisible
-      //var markerInvisible = function(marker) {
-      	//	marker.setVisible(false);
-     // }
-
       // Apply Knockout.js bindings here to ensure markers are created first.
       ko.applyBindings(new ViewModel());
 };
 
 
-
-	//****** VIEW ******** //
+//  ****** VIEW ******** //
 
 var listView = function(data) {
-	this.title = ko.observable(data.title);
-	// Make location an observable in case this needs to be changed
-	this.location = ko.observable(data.location);
-	this.type = ko.observable(data.type);
+	this.title = data.title;
+	this.location = data.location;
+	this.type = data.type;
 	this.marker = data.marker;
 	// Create property for visible binding.
 	this.isVisible = ko.observable(true);
